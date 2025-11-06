@@ -1,15 +1,9 @@
-// script.js
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Página de Liga de Billar cargada correctamente ✅");
 });
 
 // Seleccionamos el contenedor
 const space = document.getElementById('space-background');
-
-function toggleMenu() {
-    const menu = document.querySelector('nav.menu ul');
-    menu.classList.toggle('show');
-}
 
 // Función para crear estrellas
 function createStars(count) {
@@ -86,6 +80,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+});
+
+// --- MENÚ RESPONSIVO ---
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const menu = document.querySelector(".menu ul");
+
+  if (menuToggle && menu) {
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("show");
+    });
+  }
 });
 
 
