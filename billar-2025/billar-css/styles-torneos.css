@@ -1,0 +1,107 @@
+/* Contenedor principal de torneos */
+.torneos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px;
+}
+
+/* ====== Estilo general de las tarjetas ====== */
+.torneo-card {
+    background: #1b1d2b;
+    color: #fff;
+    padding: 28px; /* antes 20px */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 235px; /* ↑ Aumentamos 20% el alto aproximado */
+}
+.torneo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* ====== Título ====== */
+.torneo-card h3 {
+    color: #ffcc00;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-shadow: none; /* Quitamos el brillo */
+}
+
+/* ====== Texto de información ====== */
+.torneo-card p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+
+.torneo-card strong {
+    color: #fff;
+}
+
+/* ====== Contenedor de botones ====== */
+.torneo-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    
+}
+
+/* ====== Botones de acción ====== */
+.btn-torneo {
+    background: linear-gradient(145deg, #334e6b, #70b1d9);
+    color: rgb(7, 18, 86);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 150, 255, 0.3);
+}
+
+.btn-torneo:hover {
+    background: linear-gradient(145deg, #009dff, #00c3ff);
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(0, 200, 255, 0.5);
+}
+
+/* === Footer elegante y centrado === */
+footer {
+    margin-top: 30px;
+    padding: 12px 0;
+    font-size: 0.9rem;
+    color: #ffffffcc; /* blanco con un poco de transparencia */
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 12px 12px;
+}
+
+footer p {
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+
+/* ====== Ajuste responsive ====== */
+@media (max-width: 600px) {
+    .torneo-card {
+        padding: 15px;
+    }
+
+    .torneo-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .btn-torneo {
+        padding: 7px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+

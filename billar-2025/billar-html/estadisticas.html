@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla de Posiciones - La Bola Billiards</title>
+    <link rel="stylesheet" href="../billar-css/styles-estadisticas.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+        <!-- Formulario para registrar resultados -->
+        <section class="card-registro">
+  <img src="../billar-img/logo1.jpg" alt="Logo del torneo" class="logo-registro">
+  <h2>Registrar Resultado</h2>
+  <div class="form-registro">
+    <label for="jornada">Jornada:</label>
+    <select id="jornada"></select>
+
+    <label for="partido">Partido:</label>
+    <select id="partido"></select>
+
+    <div class="jugadores">
+      <div class="jugador">
+        <span id="lblJugador1">-</span>
+        <input type="number" id="carambolas1" placeholder="Carambolas">
+      </div>
+
+      <div class="vs">VS</div>
+
+      <div class="jugador">
+        <span id="lblJugador2">-</span>
+        <input type="number" id="carambolas2" placeholder="Carambolas">
+      </div>
+    </div>
+
+    <button id="btnRegistrar" class="btn-registrar">Registrar Resultado</button>
+  </div>
+</section>
+
+
+        <!-- Botones -->
+        <div class="botones-superiores">
+             <!-- <button id="regresar" onclick="window.history.back()">↩ Regresar</button>  --> 
+            <button id="regresar" onclick="window.location.href='index.html'">↩ Regresar</button>
+            <button id="btnVerTablaPublica" class="btn-ver-publica">Ver Tabla Pública</button>
+          <!--  <button id="btnPDF">📄 Descargar PDF</button>
+            <button id="btnJPG">🖼 Descargar JPG</button>
+            <button id="btnReiniciar" class="btn danger">🧹 Reiniciar Datos</button> -->
+        </div>
+
+
+        <!-- Aquí está la tabla visible en pantalla -->
+        <div class="tabla-contenedor">
+            <table id="tablaEstadisticas">
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Jugador</th>
+                        <th>J.J.</th>
+                        <th>J.G.</th>
+                        <th>J.P.</th>
+                        <th>C.F.</th>
+                        <th>C.C.</th>
+                        <th>D.C.</th>
+                        <th>SC/NC</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rellenado desde JS -->
+                     
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Script principal -->
+    <script src="../billar-js/script-estadisticas.js"></script>
+</body>
+</html>
+
+       

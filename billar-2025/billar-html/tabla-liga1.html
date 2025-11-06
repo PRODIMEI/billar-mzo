@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Liga 2025</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../billar-css/styles-tabla-liga1.css">
+
+    <!-- Librerías para PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>🏆 Tabla de Posiciones - Liga "Don Pedrito Llamas" 2025 🏆</h1>
+    </header>
+
+        <h2 id="tituloJornada">Tabla de la Jornada </h2>
+
+    <!-- Contenedor principal -->
+    <div id="contenedorTablaLiga">
+        <table id="tablaLiga">
+            <thead>
+                <tr>
+                    <th>Posición</th>
+                    <th>Jugador</th>
+                    <th>J.J.</th>
+                    <th>J.G.</th>
+                    <th>J.P.</th>
+                    <th>C.F.</th>
+                    <th>C.C.</th>
+                    <th>D.C.</th>
+                    <th>SC/NC</th>
+                </tr>
+            </thead>
+            <tbody> 
+                <!-- Se llenará dinámicamente desde script-tabla-liga1.js -->
+            </tbody>
+        </table> 
+    </div>
+
+    <!-- Botones de acción -->
+    <div class="botones">
+        <button id="btnRegresar">🔙 Regresar</button>
+        <button id="btnPDF">📄 Descargar PDF</button>
+        <button id="btnJPG">📄 Descargar JPG</button>
+    </div>
+
+    <footer>
+        <p>© Billar 3 Bandas Manzanillo 2025 | PRODIMEI</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="../billar-js/script-tabla-liga1.js"></script>
+</body>
+</html>

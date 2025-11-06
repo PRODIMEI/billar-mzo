@@ -1,0 +1,158 @@
+/******************************************************
+ * styles-tabla-liga1.css
+ * Estilo limpio, claro y responsivo para la tabla pública
+ ******************************************************/
+
+/* Fondo general */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a; /* azul oscuro del fondo general */
+    color: #000;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header h1 {
+    padding: 15px;
+    background-color: #003366;
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Subtítulo de la jornada */
+#tituloJornada {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor de la tabla */
+#contenedorTablaLiga {
+    margin: 30px auto;
+    width: 95%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    overflow-x: auto;
+    padding: 15px;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #000;
+    font-size: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Encabezado tabla */
+th {
+    background-color: #004aad; /* azul brillante */
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+    border: 1px solid #003b8a;
+}
+
+/* Celdas */
+td {
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    text-align: center;
+}
+
+/* Filas alternadas */
+tbody tr:nth-child(even) {
+    background-color: #f2f6fc;
+}
+
+/* Hover */
+tbody tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* Columna posición */
+td:first-child {
+    font-weight: bold;
+}
+
+/* SC/NC */
+.sc {
+    color: #009933;
+    font-weight: bold;
+}
+
+.nc {
+    color: #ff1a1a;
+    font-weight: bold;
+}
+
+/* Botones */
+.botones {
+    margin: 25px 0;
+}
+
+button {
+    background-color: #004aad;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0066cc;
+    transform: scale(1.05);
+}
+
+/* === Footer elegante y centrado === */
+footer {
+    margin-top: 30px;
+    padding: 12px 0;
+    font-size: 0.9rem;
+    color: #ffffffcc; /* blanco con un poco de transparencia */
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 12px 12px;
+}
+
+footer p {
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+

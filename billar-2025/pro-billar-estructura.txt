@@ -1,0 +1,77 @@
+
+
+    	   PROYECTO-BILLAR/
+           │
+           ├── billar-2025/
+           │
+	   ├── billar-html/
+	   │   ├── index.html
+	   │   ├── login.html
+	   │   ├── admin.html
+	   │   ├── torneos.html
+	   │   ├── jugadores.html
+	   │   ├── galeria.html
+	   │   ├── partidos.html
+	   │   ├── calendario.html
+	   │   ├── estadisticas.html
+	   │   ├── tabla-liga1.html
+	   │   ├── tabla.html
+	   │   ├── bases.html
+	   │
+	   ├── billar-css/
+	   │   ├── styles.css
+	   │   ├── styles-admin.css
+	   │   ├── styles-login.css
+	   │   ├── styles-torneos.css
+	   │   ├── styles-partidos.css
+	   │   ├── styles-calendario.css
+	   │   ├── styles-estadisticas.css
+	   │   ├── styles-tabla-liga1.css
+	   │   ├── styles-tabla.css
+	   │   ├── styles-galeria.css
+	   │   ├── styles-bases.css
+	   │   ├── styles-jugadores.css
+	   │
+	   ├── billar-js/
+	   │   ├── script.js
+	   │   ├── script-admin.js
+	   │   ├── script-login.js
+	   │   ├── script-torneos.js
+	   │   ├── script-partidos.js
+	   │   ├── script-calendario.js
+	   │   ├── script-estadisticas.js
+	   │   ├── script-tabla-liga1.js
+	   │   ├── script-tabla.js
+	   │   ├── script-galeria.js
+	   │   ├── script-bases.js
+	   │   ├── script-jugadores.js
+	   │
+	   └── billar-img/
+	       ├── billar-eventos/
+ 	       ├── billar-jugadores/
+	       ├── billar-galeria/
+	       ├── billar-calendario/
+	       ├── billar-estadisticas/
+	       ├── billar-partidos/ 
+	       ├── billar-tabla-liga1/
+	       ├── billar-tabla/
+	       ├── billar-fotos-1ra-liga/
+	       ├── billar-fotos-torneos/
+	       ├── billar-fotos/
+	       ├── 3b.png
+	       ├── facebook.png
+	       ├── facebook.png
+	       ├── instagram.png
+	       ├── logo1.jpg
+	       ├── whatsapp.png
+	       ├── youtube.png.png
+
+		
+		
+	    
+            <img src="../billar-img/billar-calendario/5jornadaTL.jpg" alt="Jornada 5">
+
+
+---------------------------------------------------------------------------------------
+
+			

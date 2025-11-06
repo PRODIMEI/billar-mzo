@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Liga de Billar</title>
+    <link rel="stylesheet" href="../billar-css/styles-admin.css">
+    <link rel="icon" href="../billar-img/3b.png">
+</head>
+<body>
+    <header class="admin-header">
+        <h1>🏆 Panel de Administración</h1>
+        <button id="cerrarSesion">Cerrar Sesión</button>
+    </header>
+
+    <main>
+        <section class="panel">
+            <div class="card" onclick="abrir('torneos.html')">
+                <h2>Torneos</h2>
+                <p>Gestiona los torneos activos.</p>
+            </div>
+
+            <div class="card" onclick="abrir('jugadores.html')">
+                <h2>Jugadores</h2>
+                <p>Registra o edita competidores.</p>
+            </div>
+
+            <div class="card" onclick="abrir('estadisticas.html')">
+                <h2>Estadísticas</h2>
+                <p>Consulta resultados y posiciones.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="../billar-js/script-admin.js"></script>
+</body>
+</html>

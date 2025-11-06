@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billar a 3 Bandas</title>
+    <link rel="icon" type="image/png" href="../billar-img/3b.png">
+    <link rel="stylesheet" href="../billar-css/styles.css">
+</head>
+<body>
+
+    <!-- Fondo espacial dinámico -->
+    <div id="space-background"></div>
+
+    <header class="header">
+        <div class="logo">
+            <img src="../billar-img/3b.png" alt="Logo Billar">
+            <h1>Prodimei Billar</h1>
+        </div>
+
+
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+
+            <!-- La opcion de Torneos con submenú -->
+                <li class="submenu">
+                    <a href="#" id="torneosBtn">Torneos ▾</a>
+                    <ul class="submenu-opciones" id="submenuTorneos">
+                        <li><a href="torneos.html">Liga</a></li>
+                        <li><a href="torneos-regionales.html">Regionales</a></li>
+                        <li><a href="torneos-nacionales.html">Nacionales</a></li>
+                    </ul>
+                </li>
+            <!-- Las demas opcion del menú -->
+                <li><a href="jugadores.html">Jugadores</a></li>
+                <li><a href="tabla-liga1.html">Estadísticas</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="login.html">Admin</a></li>
+            </ul>
+        </nav>
+
+
+
+
+    <!--    <nav class="menu">
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="torneos.html">Torneos</a></li>
+                <li><a href="jugadores.html">Jugadores</a></li>
+                <li><a href="tabla-liga1.html">Estadísticas</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="login.html">Admin</a></li>
+            </ul>
+        </nav> -->
+    </header>
+
+    <main class="contenido">
+        <section class="bienvenida">
+            <h2>Bienvenidos Familia Billarista</h2>
+            <p>Aquí podrás consultar torneos, resultados y estadísticas de los mejores jugadores de billar a 3 bandas del puerto.</p>
+          <!--  <a href="torneos.html" class="btn">Ver Torneos</a> -->
+           <!-- <a href="login.html" class="btn">Iniciar Sesión</a> -->
+        </section>
+
+        <section class="eventos">
+            <h3>Eventos Recientes</h3>
+            <div class="galeria">
+                <img src="../billar-img/billar-eventos/amigos-billaristas-1.jpg" alt="Evento 1">
+                <img src="../billar-img/billar-eventos/Convocatoria-Regional-Oct-2025.png" alt="Evento 2">
+                <img src="../billar-img/billar-eventos/Finalistas-Torneo-Regional-Oct-2025.png" alt="Evento 3">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    <div class="footer-content">
+        <p>© 2025 Liga de Billar Carambola 3 Bandas | Manzanillo, Colima</p>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/" target="_blank"><img src="../billar-img/facebook.png" alt="Facebook"></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="../billar-img/youtube.png" alt="youtube"></a>
+            <a href="https://web.whatsapp.com/" target="_blank"><img src="../billar-img/whatsapp.png" alt="whatsapp"></a>
+        </div>
+    </div>
+</footer>
+
+    <script src="../billar-js/script.js"></script>
+</body>
+</html>
