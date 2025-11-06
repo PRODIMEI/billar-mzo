@@ -188,46 +188,98 @@ body::before {
 }
 
 /* === RESPONSIVE PARA DISPOSITIVOS MÓVILES === */
-/* ======== MENÚ RESPONSIVE ======== */
-@media (max-width: 768px) {
-    nav.menu ul {
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        display: none;
-        text-align: center;
-        z-index: 1000;
-    }
-
-    nav.menu ul.show {
-        display: flex;
-    }
-
-    nav.menu li {
-        margin: 15px 0;
-    }
-
-    /* Ocultar menú por defecto */
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-        color: #fff;
-        font-size: 28px;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        z-index: 1100;
-    }
-
-    nav.menu ul li a {
-        color: #fff;
-        font-size: 18px;
-    }
+/* Submenú oculto */
+.submenu {
+    position: relative; /* Necesario para posicionar el submenú debajo */
 }
 
-/* Por defecto (pantallas grandes): ocultar el botón hamburguesa */
-.menu-toggle {
+.submenu-opciones {
     display: none;
+    position: absolute;
+    top: 100%; /* Justo debajo del botón "Torneos" */
+    left: 0; /* Alineado a la izquierda del botón */
+    background-color: rgba(32, 35, 71, 0.9);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 8px;
+    width: 200px;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* Cuando está activo (visible) */
+.submenu-opciones.activo {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.submenu-opciones li {
+    text-align: left;
+}
+
+.submenu-opciones li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.submenu-opciones li a:hover {
+    background-color: #007bff;
+}
+
+/* === MENÚ RESPONSIVO === */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* En móviles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu ul {
+    display: none;
+    flex-direction: column;
+    background: rgba(10, 10, 30, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    z-index: 999;
+  }
+
+  .menu ul.show {
+    display: flex;
+  }
+
+  .menu ul li {
+    margin: 0.5rem 0;
+    text-align: left;
+  }
+
+  .submenu-opciones {
+    position: relative;
+    background: rgba(20, 20, 40, 0.9);
+    box-shadow: none;
+    width: 100%;
+  }
+
+  .submenu-opciones li a {
+    padding-left: 20px;
+  }
+}
+
