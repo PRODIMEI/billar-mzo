@@ -14,9 +14,17 @@
             <img src="../billar-img/3b.png" alt="Logo Billar">
             <h1>Prodimei Billar</h1>
         </div>
-        <nav class="menu">
+
+        <!-- Botón de menú hamburguesa -->
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="menu" id="menu">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="../index.html">Inicio</a></li>
                 <li><a href="jugadores.html">Jugadores</a></li>
                 <li><a href="login.html">Admin</a></li>
             </ul>
@@ -25,10 +33,7 @@
 
     <main class="contenido">
         <section class="torneos">
-           <!-- <h2>EVENTOS</h2> -->
-            <div id="torneosContainer" class="torneos-container">
-                <!-- Los recuadros de torneos se generarán con JS -->
-            </div>
+            <div id="torneosContainer" class="torneos-container"></div>
         </section>
     </main>
 
