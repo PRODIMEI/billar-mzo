@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // Seleccionamos el contenedor
 const space = document.getElementById('space-background');
 
+function toggleMenu() {
+    const menu = document.querySelector('nav.menu ul');
+    menu.classList.toggle('show');
+}
+
 // Función para crear estrellas
 function createStars(count) {
     for (let i = 0; i < count; i++) {
