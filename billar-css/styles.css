@@ -78,23 +78,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* .bienvenida .btn {
-    display: inline-block;
-    margin: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 500;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: #fff;
-    transition: transform 0.3s, opacity 0.3s;
-}
-
-.bienvenida .btn:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-} */
-
 /* === GALERÍA DE EVENTOS === */
 .eventos h3 {
     text-align: center;
@@ -166,11 +149,6 @@ body {
     100% { transform: translateY(0) translateX(0) rotate(360deg);}
 }
 
-
-
-
-
-
 /* === FOOTER === */
 /* === REDES SOCIALES === */
 .footer-content {
@@ -209,53 +187,47 @@ body::before {
     opacity: 0.25;
 }
 
-
-
-
-
 /* === RESPONSIVE PARA DISPOSITIVOS MÓVILES === */
-/* Submenú oculto */
-.submenu {
-    position: relative; /* Necesario para posicionar el submenú debajo */
+/* ======== MENÚ RESPONSIVE ======== */
+@media (max-width: 768px) {
+    nav.menu ul {
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        display: none;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    nav.menu ul.show {
+        display: flex;
+    }
+
+    nav.menu li {
+        margin: 15px 0;
+    }
+
+    /* Ocultar menú por defecto */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: #fff;
+        font-size: 28px;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        z-index: 1100;
+    }
+
+    nav.menu ul li a {
+        color: #fff;
+        font-size: 18px;
+    }
 }
 
-.submenu-opciones {
+/* Por defecto (pantallas grandes): ocultar el botón hamburguesa */
+.menu-toggle {
     display: none;
-    position: absolute;
-    top: 100%; /* Justo debajo del botón "Torneos" */
-    left: 0; /* Alineado a la izquierda del botón */
-    background-color: rgba(32, 35, 71, 0.9);
-    list-style: none;
-    padding: 10px 0;
-    margin: 0;
-    border-radius: 8px;
-    width: 200px;
-    z-index: 100;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(-10px);
-}
-
-/* Cuando está activo (visible) */
-.submenu-opciones.activo {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.submenu-opciones li {
-    text-align: left;
-}
-
-.submenu-opciones li a {
-    display: block;
-    padding: 10px 15px;
-    color: white;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-
-.submenu-opciones li a:hover {
-    background-color: #007bff;
-}
