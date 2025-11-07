@@ -23,7 +23,7 @@
 @media (min-width: 1024px) {
     .torneo-card {
         max-width: 500px; /* ↑ 25% más ancha solo en PC */
-        max-width: 95%; /* evita que se pase en pantallas más chicas */
+        max-width: 90%; /* evita que se pase en pantallas más chicas */
     }
 }
 
