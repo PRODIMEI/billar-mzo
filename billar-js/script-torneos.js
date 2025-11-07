@@ -1,4 +1,4 @@
-// === LISTA DE TORNEOS ===
+// === TORNEOS ===
 const torneos = [
     {
         nombre: "Torneo de Liga, Don. Pedrito Llamas. 2025",
