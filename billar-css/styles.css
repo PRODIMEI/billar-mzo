@@ -1,5 +1,4 @@
 /* === ESTILO GLOBAL === */
-
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +27,7 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 05px;
+    gap: 5px;
 }
 
 .logo h1 {
@@ -107,7 +106,6 @@ body {
     box-shadow: 0 6px 20px rgba(0,0,0,0.7);
 }
 
-
 /* Contenedor del fondo */
 #space-background {
     position: fixed;
@@ -150,7 +148,6 @@ body {
 }
 
 /* === FOOTER === */
-/* === REDES SOCIALES === */
 .footer-content {
     display: flex;
     flex-direction: column;
@@ -187,17 +184,16 @@ body::before {
     opacity: 0.25;
 }
 
-/* === RESPONSIVE PARA DISPOSITIVOS MÓVILES === */
-/* Submenú oculto */
+/* === SUBMENÚ === */
 .submenu {
-    position: relative; /* Necesario para posicionar el submenú debajo */
+    position: relative;
 }
 
 .submenu-opciones {
     display: none;
     position: absolute;
-    top: 100%; /* Justo debajo del botón "Torneos" */
-    left: 0; /* Alineado a la izquierda del botón */
+    top: 100%;
+    left: 0;
     background-color: rgba(32, 35, 71, 0.9);
     list-style: none;
     padding: 10px 0;
@@ -211,7 +207,6 @@ body::before {
     transform: translateY(-10px);
 }
 
-/* Cuando está activo (visible) */
 .submenu-opciones.activo {
     display: block;
     opacity: 1;
@@ -236,50 +231,63 @@ body::before {
 
 /* === MENÚ RESPONSIVO === */
 .menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-/* En móviles */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .menu ul {
     display: none;
     flex-direction: column;
-    background: rgba(10, 10, 30, 0.95);
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    width: 200px;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    z-index: 999;
-  }
-
-  .menu ul.show {
-    display: flex;
-  }
-
-  .menu ul li {
-    margin: 0.5rem 0;
-    text-align: left;
-  }
-
-  .submenu-opciones {
-    position: relative;
-    background: rgba(20, 20, 40, 0.9);
-    box-shadow: none;
-    width: 100%;
-  }
-
-  .submenu-opciones li a {
-    padding-left: 20px;
-  }
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    gap: 2px;
 }
+
+.menu-toggle .menu-label {
+    font-size: 0.8rem;
+    color: #ffb347;
+    margin-top: 3px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(10, 10, 30, 0.95);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        z-index: 999;
+    }
+
+    .menu ul.show {
+        display: flex;
+    }
+
+    .menu ul li {
+        margin: 0.5rem 0;
+        text-align: left;
+    }
+
+    .submenu-opciones {
+        position: relative;
+        background: rgba(20, 20, 40, 0.9);
+        box-shadow: none;
+        width: 100%;
+    }
+
+    .submenu-opciones li a {
+        padding-left: 20px;
+    }
+}
+
 
