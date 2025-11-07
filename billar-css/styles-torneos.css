@@ -143,18 +143,33 @@ footer {
     }
 }
 
-
 /* 🔧 Fuerza que el menú aparezca correctamente al hacer clic */
 .menu.show {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(15, 15, 40, 0.95);
-    position: absolute;
-    top: 75px;
-    left: 0;
-    width: 100%;
-    padding: 1rem 0;
-    z-index: 2000;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(15, 15, 40, 0.95);
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 2000;
+}
+
+.menu.show ul {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menu.show li a {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu.show li a:hover {
+  color: #ffb347;
 }
