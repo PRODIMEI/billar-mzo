@@ -15,9 +15,21 @@
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 60%;  /* ==500px;== */
+     min-height: 235px;
+    max-width: 320px; /* ancho base (móviles/tablets) */
 }
+
+/* Más ancha en pantallas grandes */
+@media (min-width: 1024px) {
+    .torneo-card {
+        max-width: 400px; /* ↑ 25% más ancha solo en PC */
+    }
+}
+
+
+
+
+
 
 .torneo-card:hover {
     transform: translateY(-6px);
