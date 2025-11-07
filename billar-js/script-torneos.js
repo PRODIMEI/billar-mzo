@@ -1,4 +1,4 @@
-// === TORNEOS ===
+// === LISTA DE TORNEOS ===
 const torneos = [
     {
         nombre: "Torneo de Liga, Don. Pedrito Llamas. 2025",
@@ -45,7 +45,6 @@ const menu = document.getElementById("menu");
 
 menuToggle.addEventListener("click", () => {
     menu.classList.toggle("show");
-    menuToggle.classList.toggle("active");
 });
 
 
