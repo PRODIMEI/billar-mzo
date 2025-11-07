@@ -16,7 +16,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 80%;  /* ==500px;== */
+    width: 70%;  /* ==500px;== */
 }
 
 .torneo-card:hover {
