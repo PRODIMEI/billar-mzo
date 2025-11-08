@@ -1,1 +1,86 @@
-<h1>Pagina en desarollo. "PRODIMEI"</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prodimei Billar</title>
+  <link rel="icon" type="image/png" href="billar-img/3b.png" />
+  <link rel="stylesheet" href="billar-css/styles-galeria.css" />
+</head>
+<body>
+  <!-- Fondo espacial dinámico -->
+  <div id="space-background"></div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="billar-img/3b.png" alt="Logo Billar" />
+      <h1>Billar Mzo. 3 Bandas</h1>
+    </div>
+
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" id="menuToggle">
+      ☰
+      <span class="menu-label">Menú</span>
+    </button>
+    
+
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html" class="active">Inicio</a></li>
+
+        <!-- Submenú -->
+        <li class="submenu">
+          <a href="#" id="torneosBtn">Torneos ▾</a>
+          <ul class="submenu-opciones" id="submenuTorneos">
+            <li><a href="billar-html/torneos.html">Liga</a></li>
+            <li><a href="billar-html/torneos-regionales.html">Regionales</a></li>
+            <li><a href="billar-html/torneos-nacionales.html">Nacionales</a></li>
+          </ul>
+        </li>
+
+       <!-- <li><a href="billar-html/jugadores.html">Jugadores</a></li>   
+        <li><a href="billar-html/tabla-liga1.html">Estadísticas</a></li>
+        <li><a href="billar-html/galeria.html">Galería</a></li>
+        <li><a href="billar-html/login.html">Admin</a></li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido">
+    <section class="bienvenida">
+      <h2>Participantes de la primera liga del centro</h2>
+      <p>
+        Jugadores de billar a 3 bandas del puerto de Manzanillo.
+      </p>
+    </section>
+
+    <section class="eventos">
+      <h3>Billaristas</h3>
+      <div class="galeria">
+        <img src="billar-img/billar-fotos.1ra-liga/tl-1ra-1.jpg" alt="1" />
+        <img src="billar-img/billar-fotos.1ra-liga/tl-1ra-2.jp" alt="2" />
+        <img src="billar-img/billar-fotos.1ra-liga/tl-1ra-3.jp" alt="3" />
+        <img src="billar-img/billar-fotos.1ra-liga/tl-1ra-4.jp" alt="4" />
+        <img src="billar-img/billar-fotos.1ra-liga/tl-1ra-5.jp" alt="5" />
+        <img src="billar-img/billar-fotos.1ra-liga/tl-1ra-6.jp" alt="6" />
+        <img src="billar-img/billar-fotos.1ra-liga/tl-1ra-7.jp" alt="7" />
+        <img src="billar-img/billar-fotos.1ra-liga/tl-1ra-8.jp" alt="8" />
+        <img src="billar-img/billar-fotos.1ra-liga/tl-1ra-9.jp" alt="9" />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Liga de Billar Carambola 3 Bandas | Manzanillo, Colima</p>
+      <div class="redes-sociales">
+        <a href="https://www.facebook.com/" target="_blank"><img src="billar-img/facebook.png" alt="Facebook" /></a>
+        <a href="https://www.youtube.com/" target="_blank"><img src="billar-img/youtube.png" alt="YouTube" /></a>
+        <a href="https://web.whatsapp.com/" target="_blank"><img src="billar-img/whatsapp.png" alt="WhatsApp" /></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="billar-js/script-galeria.js"></script>
+</body>
+</html>
