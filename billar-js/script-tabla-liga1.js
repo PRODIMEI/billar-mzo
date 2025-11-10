@@ -36,7 +36,7 @@ if (titulo) {
     if (numeroJornada) {
         titulo.textContent = `Tabla de la Jornada ${numeroJornada}`;
     } else {
-        titulo.textContent = "Tabla de la Jornada 7";
+        titulo.textContent = "Tabla de la Jornada 8";
     }
 }
 
