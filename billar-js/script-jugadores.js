@@ -8,7 +8,7 @@ if (loginForm) {
     const pass = document.getElementById("password").value;
 
     // Usuario simulado
-    if (user === "admin" && pass === "1234") {
+    if (user === "mzo" && pass === "7777") {
       window.location.href = "jugadores.html";
     } else {
       document.getElementById("error-message").textContent = "Usuario o contraseña incorrectos.";
@@ -25,3 +25,4 @@ if (menuToggle) {
     menu.classList.toggle("show");
   });
 }
+
