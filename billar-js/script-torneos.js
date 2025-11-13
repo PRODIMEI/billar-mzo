@@ -2,8 +2,8 @@
 const torneos = [
   {
     nombre: "Torneo de Liga, Don. Pedrito Llamas. 2025",
-    inicio: "2025-10-22",
-    fin: "2025-05-12",
+    inicio: "22-10-2025",
+    fin: "05-12-2025",
     competidores: 18,
     lugar: "La Bola Centro, Manzanillo, Colima",
     xxx: "xxx"
