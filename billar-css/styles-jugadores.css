@@ -32,7 +32,19 @@ body {
   pointer-events: none;
 }
 
-/* ===== HEADER (IGUAL QUE INDEX) ===== */
+.planeta {
+  position: absolute;
+  animation: flotar linear infinite;
+  opacity: 0.85;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-35px) rotate(12deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* ===== HEADER (IGUAL AL INDEX) ===== */
 .header {
   position: fixed;
   top: 0;
@@ -73,10 +85,6 @@ body {
   color: white;
 }
 
-.menu {
-  position: relative;
-}
-
 .menu ul {
   display: flex;
   list-style: none;
@@ -95,6 +103,10 @@ body {
 }
 
 /* ===== SUBMENÚ ===== */
+.submenu {
+  position: relative;
+}
+
 .submenu-opciones {
   display: none;
   position: absolute;
@@ -102,47 +114,49 @@ body {
   padding: 10px;
   flex-direction: column;
   margin-top: 5px;
+  border-radius: 8px;
 }
 
 .submenu-opciones.show {
   display: flex;
 }
 
-.submenu-opciones li {
-  margin: 5px 0;
-}
-
 /* ===== RESPONSIVE MENÚ ===== */
 @media (max-width: 850px) {
   .menu-toggle {
-    display: block;
+      display: block;
   }
 
   .menu {
-    display: none;
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    background: rgba(0,0,0,0.85);
-    padding: 15px;
-    border-radius: 10px;
+      display: none;
+      position: absolute;
+      top: 80px;
+      right: 20px;
+      background: rgba(0,0,0,0.85);
+      padding: 15px;
+      border-radius: 10px;
+      z-index: 3000;
   }
 
   .menu.show {
-    display: block;
+      display: block;
   }
 
   .menu ul {
-    flex-direction: column;
+      flex-direction: column;
+      gap: 10px;
   }
 }
 
-/* ===== TÍTULO ===== */
-.titulo-seccion {
-  padding-top: 130px;
+/* ===== CONTENEDOR ===== */
+.jugadores-container {
+  padding-top: 140px;
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+}
+
+.jugadores-container h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
 }
 
 /* ===== TARJETAS ===== */
@@ -163,6 +177,7 @@ body {
   transition: 0.6s ease;
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255,255,255,0.15);
+  z-index: 5;
 }
 
 .jugador-card.visible {
@@ -171,9 +186,10 @@ body {
 }
 
 .jugador-card img {
-  width: 30%;
+  width: 70%;
   border-radius: 18px;
   margin-bottom: 10px;
 }
+
 
 
