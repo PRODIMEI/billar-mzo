@@ -1,93 +1,129 @@
-/* === HEADER FIJO Y SOBRE EL FONDO === */
+/* ============================================================
+   HEADER – IGUAL AL INDEX.HTML
+============================================================ */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 12px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 10, 25, 0.65);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 1000;
 }
+
+/* Logo */
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.logo h1 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #f0f0f0;
-}
-
-.menu ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #ddd;
-    font-weight: 500;
-    padding: 0.3rem 0.5rem;
-    transition: 0.3s;
-}
-
-.menu a:hover,
-.menu a.active {
-    color: #ffb347;
-}
-/* Logo del header */
-header .logo {
   display: flex;
   align-items: center;
   gap: 10px;
   color: white;
 }
 
-header .logo img {
-  width: 48px;
-  height: 48px;
+.logo img {
+  width: 50px;
+  height: 50px;
 }
 
-/* Menú hamburguesa */
-.menu-toggle {
-  cursor: pointer;
+.logo h1 {
   color: white;
-  font-size: 22px;
-  z-index: 1001;
+  font-size: 1.8rem;
+  margin: 0;
 }
 
+/* ============================================================
+   MENU NORMAL (COMPUTADORA)
+============================================================ */
+.menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #ffb347;
+}
+
+/* ============================================================
+   MENU HAMBURGUESA (MOVIL)
+============================================================ */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+  color: white;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 4px;
+  background: white;
+  border-radius: 3px;
+}
+
+.menu-toggle p {
+  font-size: 12px;
+  margin: 0;
+  margin-top: 3px;
+}
+
+/* MENÚ DESPLEGABLE */
 .menu {
   position: absolute;
-  top: 70px;
-  right: 20px;
-  background: rgba(5,10,25,0.95);
-  padding: 18px;
+  top: 80px;
+  right: 15px;
+  background: rgba(5, 10, 25, 0.95);
+  padding: 15px;
   border-radius: 12px;
   display: none;
-  z-index: 1001;
+  flex-direction: column;
 }
 
 .menu.show {
-  display: block;
+  display: flex;
 }
 
+@media (max-width: 850px) {
+  .menu-toggle {
+    display: flex;
+  }
 
-/* === CANVAS FONDO === */
+  .menu ul {
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   FONDO GALÁCTICO
+============================================================ */
 #starsCanvas {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: -5;
 }
 
-/* === PLANETAS === */
+/* PLANETAS */
 .planet {
   position: fixed;
-  width: 280px;
+  width: 250px;
   opacity: 0.7;
   animation: floatPlanet 18s ease-in-out infinite alternate;
   z-index: -3;
@@ -97,54 +133,16 @@ header .logo img {
 #planet2 { bottom: 10%; right: 8%; }
 
 @keyframes floatPlanet {
-  0% { transform: translateY(0px) scale(1); }
+  0% { transform: translateY(0) scale(1); }
   100% { transform: translateY(-35px) scale(1.05); }
 }
 
-/* === MENÚ === */
-.menu-toggle {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  z-index: 9999;
-}
-
-.menu-toggle span {
-  width: 30px;
-  height: 4px;
-  background: white;
-  margin: 3px 0;
-  border-radius: 3px;
-}
-
-.menu {
-  display: none;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  background: rgba(5, 10, 25, 0.95);
-  padding: 15px;
-  border-radius: 12px;
-  z-index: 9999;
-}
-
-.menu.show {
-  display: block;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-}
-
-.menu ul { list-style: none; padding: 0; }
-
-/* === TARJETAS === */
+/* ============================================================
+   TARJETAS DE JUGADORES
+============================================================ */
 .jugadores-container {
-  padding-top: 160px;  /* ⭐ hace que no tape el encabezado */
- /* === padding: 2rem;  TARJETAS === */
+  padding-top: 160px; /* Para que NO lo tape el header */
+  padding-bottom: 40px;
   color: white;
   text-align: center;
   position: relative;
@@ -185,12 +183,15 @@ header .logo img {
   border-radius: 12px;
 }
 
-/* === LOGIN DIFUMINADO === */
+/* ============================================================
+   LOGIN - DIFUMINADO
+============================================================ */
 .login-container {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(25, 25, 60, 0.7);
+  background: rgba(25, 25, 60, 0.75);
   padding: 2rem;
   border-radius: 15px;
   color: white;
@@ -199,12 +200,3 @@ header .logo img {
   backdrop-filter: blur(10px);
   z-index: 20;
 }
-
-
-
-
-
-
-
-
-
