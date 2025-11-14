@@ -1,29 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Jugadores - Billar 3 Bandas</title>
-  <link rel="stylesheet" href="../billar-css/styles-jugadores.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Jugadores</title>
+    <link rel="stylesheet" href="styles-jugadores.css">
 </head>
+
 <body>
 
-  <canvas id="starsCanvas"></canvas>
-  <img id="planet1" class="planet" src="../billar-img/planetas/planet1.png">
-  <img id="planet2" class="planet" src="../billar-img/planetas/planet2.png">
+    <!-- ⭐ FONDO GALÁCTICO -->
+    <canvas id="starsCanvas"></canvas>
 
-  <div class="login-container blur-bg">
-    <h2>Acceso a Jugadores</h2>
-    <form id="loginForm">
-      <input type="text" id="username" placeholder="Usuario" required>
-      <input type="password" id="password" placeholder="Contraseña" required>
-      <button type="submit">Ingresar</button>
-    </form>
-    <p id="error-message"></p>
-  </div>
+    <!-- PLANETAS -->
+    <img id="planet1" class="planet" src="../billar-img/planetas/planet1.png">
+    <img id="planet2" class="planet" src="../billar-img/planetas/planet2.png">
 
-  <script src="../billar-js/script-jugadores.js"></script>
+    <!-- ===== MENÚ (opcional en login) ===== -->
+    <header>
+        <div id="menuToggle" class="menu-toggle">
+            <span style="font-size:32px;">☰</span>
+            <div>Menú</div>
+        </div>
+
+        <nav id="menu" class="menu">
+            <a href="index.html">Inicio</a><br>
+            <a href="jugadores.html">Jugadores</a><br>
+            <a href="login-jugadores.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- ⭐ LOGIN DIFUMINADO -->
+    <div class="login-container blur-bg">
+        <h2 style="text-align:center; margin-bottom: 1rem;">Acceso a Jugadores</h2>
+
+        <form id="loginForm">
+
+            <label for="username">Usuario</label>
+            <input type="text" id="username" required placeholder="Ingresa usuario">
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" required placeholder="Ingresa contraseña">
+
+            <button 
+                type="submit" 
+                style="width:100%; padding:10px; margin-top:15px; border-radius:10px; 
+                background:#4a78ff; border:none; color:white; cursor:pointer; font-size:16px;">
+                Entrar
+            </button>
+
+            <p id="error-message" style="color:#ff8080; margin-top:10px; text-align:center;"></p>
+        </form>
+    </div>
+
+    <script src="script-jugadores.js"></script>
 </body>
 </html>
+
+
 
 
