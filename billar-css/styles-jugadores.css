@@ -1,60 +1,52 @@
-/* === CANVAS DE FONDO GALÁCTICO === */
+/* === CANVAS FONDO === */
 #starsCanvas {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -5;
 }
 
-/* === MENÚ HAMBURGUESA === */
+/* === PLANETAS === */
+.planet {
+  position: fixed;
+  width: 280px;
+  opacity: 0.7;
+  animation: floatPlanet 18s ease-in-out infinite alternate;
+  z-index: -3;
+}
+
+#planet1 { top: 10%; left: 5%; }
+#planet2 { bottom: 10%; right: 8%; }
+
+@keyframes floatPlanet {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(-35px) scale(1.05); }
+}
+
+/* === MENÚ === */
 .menu-toggle {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.menu-toggle span {
-  width: 30px;
-  height: 4px;
-  background: white;
-  border-radius: 4px;
-}
-
-.menu-toggle p {
-  font-size: 12px;
   color: white;
-  margin: 0;
+  z-index: 50;
 }
 
 .menu {
+  display: none;
   position: absolute;
   top: 70px;
   right: 20px;
-  background: rgba(5, 12, 30, 0.95);
+  background: rgba(5, 10, 25, 0.95);
   padding: 15px;
-  border-radius: 10px;
-  display: none;
+  border-radius: 12px;
+  z-index: 50;
 }
 
 .menu.show {
   display: block;
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.menu li {
-  margin: 10px 0;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
 }
 
 /* === TARJETAS === */
@@ -72,35 +64,45 @@
 }
 
 .jugador-card {
-  background: rgba(20, 25, 50, 0.9);
-  border-radius: 15px;
+  background: rgba(15, 20, 40, 0.85);
+  border: 1px solid rgba(80, 130, 255, 0.4);
+  border-radius: 18px;
   padding: 20px;
   width: 300px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.5);
-  transition: 0.3s;
+  box-shadow: 0 0 25px rgba(0, 100, 255, 0.3);
+  transition: 0.4s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.jugador-card.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .jugador-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 35px rgba(0, 140, 255, 0.8);
 }
 
 .jugador-card img {
   width: 100%;
   border-radius: 12px;
-  margin-bottom: 10px;
 }
 
-/* === LOGIN === */
+/* === LOGIN DIFUMINADO === */
+.blur-bg {
+  backdrop-filter: blur(10px);
+}
+
 .login-container {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(30, 30, 60, 0.8);
+  background: rgba(25, 25, 60, 0.7);
   padding: 2rem;
   border-radius: 15px;
-  text-align: center;
   color: white;
   width: 320px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
 }
-
