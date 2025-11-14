@@ -19,11 +19,15 @@ torneosBtn.addEventListener("click", (e) => {
 const canvas = document.getElementById("starsCanvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function ajustarCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+ajustarCanvas();
+
+window.addEventListener("resize", ajustarCanvas);
 
 let stars = [];
-
 for (let i = 0; i < 200; i++) {
     stars.push({
         x: Math.random() * canvas.width,
@@ -67,9 +71,9 @@ function crearPlaneta(url, size, duration, top, left) {
     planetsContainer.appendChild(p);
 }
 
-crearPlaneta("billar-img/planet1.png", 140, 18, 10, 10);
-crearPlaneta("billar-img/planet2.png", 180, 22, 70, 80);
-crearPlaneta("billar-img/planet3.png", 120, 25, 40, 30);
+crearPlaneta("../billar-img/planet1.png", 140, 18, 10, 10);
+crearPlaneta("../billar-img/planet2.png", 180, 22, 70, 80);
+crearPlaneta("../billar-img/planet3.png", 120, 25, 40, 30);
 
 /* ==== TARJETAS ANIMACIÓN ==== */
 const cards = document.querySelectorAll(".jugador-card");
