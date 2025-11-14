@@ -1,17 +1,16 @@
 /* === HEADER FIJO Y SOBRE EL FONDO === */
-header {
+.header {
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;   /* ⭐ LO MÁS IMPORTANTE */
-  background: rgba(10, 14, 30, 0.45);
+  padding: 12px 25px;
+  background: rgba(10, 10, 25, 0.65);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 1000;
 }
 
 /* Logo del header */
@@ -175,6 +174,7 @@ header .logo img {
   backdrop-filter: blur(10px);
   z-index: 20;
 }
+
 
 
 
