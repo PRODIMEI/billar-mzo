@@ -8,7 +8,36 @@
     backdrop-filter: blur(6px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ddd;
+    font-weight: 500;
+    padding: 0.3rem 0.5rem;
+    transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+    color: #ffb347;
+}
 /* Logo del header */
 header .logo {
   display: flex;
@@ -170,6 +199,7 @@ header .logo img {
   backdrop-filter: blur(10px);
   z-index: 20;
 }
+
 
 
 
