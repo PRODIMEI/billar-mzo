@@ -1,36 +1,13 @@
-# script-login-jugadores.js
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-```javascript
-// Mostrar / ocultar menú
-const menuToggle = document.getElementById("menuToggle");
-const menu = document.getElementById("menu");
+    let user = document.getElementById("usuario").value.trim();
+    let pass = document.getElementById("password").value.trim();
+    let errorMsg = document.getElementById("errorMsg");
 
-menuToggle.addEventListener("click", () => {
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-});
-
-// Submenú torneos
-const torneosBtn = document.getElementById("torneosBtn");
-const submenuTorneos = document.getElementById("submenuTorneos");
-
-torneosBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  submenuTorneos.style.display = submenuTorneos.style.display === "block" ? "none" : "block";
-});
-
-// LOGIN BÁSICO
-const loginForm = document.getElementById("loginForm");
-const mensaje = document.getElementById("mensaje");
-
-loginForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const usuario = document.getElementById("usuario").value.trim();
-  const password = document.getElementById("password").value.trim();
-
-  if (usuario === "jugador" && password === "1234") {
-    window.location.href = "jugadores.html"; // Página destino
-  } else {
-    mensaje.textContent = "Usuario o contraseña incorrectos";
-  }
+    if (user === "mzo" && pass === "1234") {
+        window.location.href = "jugadores.html";
+    } else {
+        errorMsg.textContent = "Usuario o contraseña incorrectos";
+    }
 });
