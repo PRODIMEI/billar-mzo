@@ -171,7 +171,8 @@ body {
 }
 
 .jugador-card img {
-  width: 100%;
+  width: 50%;
   border-radius: 18px;
   margin-bottom: 10px;
 }
+
