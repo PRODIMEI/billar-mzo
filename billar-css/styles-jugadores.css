@@ -1,202 +1,206 @@
-/* ============================================================
-   HEADER – IGUAL AL INDEX.HTML
-============================================================ */
-.header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 12px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(10, 10, 25, 0.65);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  z-index: 1000;
-}
-
-/* Logo */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: white;
-}
-
-.logo img {
-  width: 50px;
-  height: 50px;
-}
-
-.logo h1 {
-  color: white;
-  font-size: 1.8rem;
-  margin: 0;
-}
-
-/* ============================================================
-   MENU NORMAL (COMPUTADORA)
-============================================================ */
-.menu ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-.menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: 0.3s;
-}
-
-.menu ul li a:hover {
-  color: #ffb347;
-}
-
-/* ============================================================
-   MENU HAMBURGUESA (MOVIL)
-============================================================ */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  gap: 5px;
-  color: white;
-}
-
-.menu-toggle span {
-  width: 28px;
-  height: 4px;
-  background: white;
-  border-radius: 3px;
-}
-
-.menu-toggle p {
-  font-size: 12px;
-  margin: 0;
-  margin-top: 3px;
-}
-
-/* MENÚ DESPLEGABLE */
-.menu {
-  position: absolute;
-  top: 80px;
-  right: 15px;
-  background: rgba(5, 10, 25, 0.95);
-  padding: 15px;
-  border-radius: 12px;
-  display: none;
-  flex-direction: column;
-}
-
-.menu.show {
-  display: flex;
-}
-
-@media (max-width: 850px) {
-  .menu-toggle {
-    display: flex;
-  }
-
-  .menu ul {
-    flex-direction: column;
-    gap: 1.2rem;
-    text-align: center;
-  }
-}
-
-/* ============================================================
-   FONDO GALÁCTICO
-============================================================ */
+/* ============================================
+   🎮  FONDO: ESTRELLAS + PLANETAS
+   ============================================ */
 #starsCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -5;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
 }
 
-/* PLANETAS */
+/* Planetas flotantes */
 .planet {
-  position: fixed;
-  width: 250px;
-  opacity: 0.7;
-  animation: floatPlanet 18s ease-in-out infinite alternate;
-  z-index: -3;
+    position: fixed;
+    width: 280px;
+    opacity: 0.7;
+    animation: floatPlanet 18s ease-in-out infinite alternate;
+    z-index: -3;
 }
 
 #planet1 { top: 10%; left: 5%; }
 #planet2 { bottom: 10%; right: 8%; }
 
 @keyframes floatPlanet {
-  0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(-35px) scale(1.05); }
+    0% { transform: translateY(0px) scale(1); }
+    100% { transform: translateY(-35px) scale(1.05); }
 }
 
-/* ============================================================
-   TARJETAS DE JUGADORES
-============================================================ */
+/* ============================================
+   🎯  HEADER (IGUAL AL DE INDEX.HTML)
+   ============================================ */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    width: 48px;
+    height: 48px;
+}
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+/* ============================================
+   🍔  MENÚ HAMBURGUESA
+   ============================================ */
+.menu-toggle {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2000;
+}
+
+.menu-label {
+    font-size: 12px;
+    margin-top: -5px;
+}
+
+/* Menú desplegable */
+.menu {
+    display: none;
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    background: rgba(5, 10, 25, 0.95);
+    padding: 15px;
+    border-radius: 12px;
+    z-index: 1500;
+}
+
+.menu.show {
+    display: block;
+}
+
+.menu ul { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+    font-size: 17px;
+}
+
+/* Submenú */
+.submenu-opciones {
+    display: none;
+    padding-left: 15px;
+}
+
+.submenu-opciones.show {
+    display: block;
+}
+
+/* ============================================
+   ⭐  CONTENEDOR DE TARJETAS
+   ============================================ */
 .jugadores-container {
-  padding-top: 160px; /* Para que NO lo tape el header */
-  padding-bottom: 40px;
-  color: white;
-  text-align: center;
-  position: relative;
-  z-index: 20;
+    padding-top: 160px;  
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 20;
 }
 
 .tarjetas-jugadores {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
 }
 
+/* ============================================
+   🎴  TARJETAS DE JUGADORES
+   ============================================ */
 .jugador-card {
-  background: rgba(15, 20, 40, 0.85);
-  border: 1px solid rgba(80, 130, 255, 0.4);
-  border-radius: 18px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 0 25px rgba(0, 100, 255, 0.3);
-  transition: 0.4s;
-  opacity: 0;
-  transform: translateY(30px);
+    background: rgba(15, 20, 40, 0.85);
+    border: 1px solid rgba(80, 130, 255, 0.4);
+    border-radius: 18px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 25px rgba(0, 100, 255, 0.3);
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 .jugador-card.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .jugador-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 0 35px rgba(0, 140, 255, 0.8);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 35px rgba(0, 140, 255, 0.8);
 }
 
 .jugador-card img {
-  width: 100%;
-  border-radius: 12px;
+    width: 100%;
+    border-radius: 12px;
 }
 
-/* ============================================================
-   LOGIN - DIFUMINADO
-============================================================ */
+/* ============================================
+   🔐 LOGIN (SI LO USAS EN LA MISMA PÁGINA)
+   ============================================ */
 .login-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(25, 25, 60, 0.75);
-  padding: 2rem;
-  border-radius: 15px;
-  color: white;
-  width: 320px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
-  z-index: 20;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(25, 25, 60, 0.7);
+    padding: 2rem;
+    border-radius: 15px;
+    color: white;
+    width: 320px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    z-index: 20;
 }
+
+/* ============================================
+   📱  RESPONSIVE PARA CELULARES
+   ============================================ */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .menu-toggle {
+        font-size: 26px;
+    }
+
+    .jugador-card {
+        width: 90%;
+    }
+}
+
