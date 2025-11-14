@@ -174,22 +174,36 @@ body {
   text-align: center;
   transform: scale(0.8);
   opacity: 0;
-  transition: 0.6s ease;
+  transition: 0.5s ease;
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.15);
-  z-index: 5;
+  border: 1px solid rgba(255,255,255,0.12);
+
+   /* Efecto azul tenue alrededor */
+  box-shadow: 0 0 0px rgba(0, 174, 255, 0.0);
 }
 
+/* Cuando aparecen con scroll */
 .jugador-card.visible {
   transform: scale(1);
   opacity: 1;
 }
 
+/* EFECTO AL PASAR EL MOUSE */
+.jugador-card:hover {
+  transform: scale(1.06); /* Se agranda un poco */
+  border-color: #00c8ff;
+  box-shadow:
+    0 0 10px rgba(0, 174, 255, 0.4),
+    0 0 20px rgba(0, 174, 255, 0.25),
+    0 0 35px rgba(0, 174, 255, 0.15);
+  transition: 0.25s ease;
+}
 .jugador-card img {
   width: 70%;
   border-radius: 18px;
   margin-bottom: 10px;
 }
+
 
 
 
