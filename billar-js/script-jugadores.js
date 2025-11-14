@@ -1,83 +1,71 @@
-/* === LOGIN === */
-const loginForm = document.getElementById("loginForm");
-if (loginForm) {
-  loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const u = document.getElementById("username").value;
-    const p = document.getElementById("password").value;
-
-    if (u === "mzo" && p === "7777") {
-      window.location.href = "jugadores.html";
-    } else {
-      document.getElementById("error-message").textContent =
-        "Usuario o contraseña incorrectos.";
-    }
-  });
-}
-
-/* === MENÚ === */
+// ==== MENÚ HAMBURGUESA ====
 const menuToggle = document.getElementById("menuToggle");
 const menu = document.getElementById("menu");
 
-if (menuToggle) {
-  menuToggle.addEventListener("click", () => {
+menuToggle.addEventListener("click", () => {
     menu.classList.toggle("show");
-  });
-}
+});
 
-/* === ESTRELLAS === */
-const canvas = document.getElementById("starsCanvas");
-const ctx = canvas.getContext("2d");
+// Submenú torneos
+const torneosBtn = document.getElementById("torneosBtn");
+const submenu = document.getElementById("submenuTorneos");
 
-function resize() {
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
-}
-resize();
-window.addEventListener("resize", resize);
+torneosBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    submenu.classList.toggle("show");
+});
 
-const stars = [];
-for (let i = 0; i < 150; i++) {
-  stars.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    size: Math.random() * 2,
-    speed: Math.random() * 0.8 + 0.4,
-  });
-}
-
-function animateStars() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  stars.forEach((s) => {
-    ctx.fillStyle = "white";
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
-    ctx.fill();
-
-    s.y += s.speed;
-    if (s.y > canvas.height) s.y = 0;
-  });
-
-  requestAnimationFrame(animateStars);
-}
-animateStars();
-
-/* === ANIMACIÓN DE TARJETAS === */
+// ==== ANIMACIÓN DE TARJETAS ====
 const cards = document.querySelectorAll(".jugador-card");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
+function mostrarTarjetas() {
+    cards.forEach((card) => {
+        const top = card.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+            card.classList.add("visible");
+        }
     });
-  },
-  { threshold: 0.2 }
-);
+}
 
-cards.forEach((card) => observer.observe(card));
+window.addEventListener("scroll", mostrarTarjetas);
+mostrarTarjetas();
 
+// ==== ESTRELLAS FONDO ====
+const canvas = document.getElementById("starsCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let estrellas = [];
+
+for (let i = 0; i < 200; i++) {
+    estrellas.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2,
+        speed: Math.random() * 0.5 + 0.2
+    });
+}
+
+function animarEstrellas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    estrellas.forEach((estrella) => {
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(estrella.x, estrella.y, estrella.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        estrella.y += estrella.speed;
+
+        if (estrella.y > canvas.height) {
+            estrella.y = 0;
+            estrella.x = Math.random() * canvas.width;
+        }
+    });
+
+    requestAnimationFrame(animarEstrellas);
+}
+
+animarEstrellas();
 
