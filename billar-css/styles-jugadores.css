@@ -119,6 +119,7 @@ header .logo img {
 
 /* === TARJETAS === */
 .jugadores-container {
+  padding-top: 130px;  /* ⭐ hace que no tape el encabezado */
   padding: 2rem;
   color: white;
   text-align: center;
@@ -174,6 +175,7 @@ header .logo img {
   backdrop-filter: blur(10px);
   z-index: 20;
 }
+
 
 
 
