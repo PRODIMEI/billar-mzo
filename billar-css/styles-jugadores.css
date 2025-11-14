@@ -1,3 +1,56 @@
+/* === HEADER FIJO Y SOBRE EL FONDO === */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;   /* ⭐ LO MÁS IMPORTANTE */
+  background: rgba(10, 14, 30, 0.45);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Logo del header */
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+header .logo img {
+  width: 48px;
+  height: 48px;
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+  cursor: pointer;
+  color: white;
+  font-size: 22px;
+  z-index: 1001;
+}
+
+.menu {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: rgba(5,10,25,0.95);
+  padding: 18px;
+  border-radius: 12px;
+  display: none;
+  z-index: 1001;
+}
+
+.menu.show {
+  display: block;
+}
+
+
 /* === CANVAS FONDO === */
 #starsCanvas {
   position: fixed;
@@ -121,5 +174,6 @@
   backdrop-filter: blur(10px);
   z-index: 20;
 }
+
 
 
