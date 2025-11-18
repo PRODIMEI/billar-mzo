@@ -27,9 +27,9 @@ function renderTorneos() {
       <div class="torneo-buttons">
         <a href="calendario.html" class="btn-torneo">Calendario</a>
         <a href="partidos.html" class="btn-torneo">Partidos</a>
-        <a href="Bases.html" class="btn-torneo">Bases</a>
         <a href="tabla.html" class="btn-torneo">Tablas</a>
-         
+        <a href="Bases.html" class="btn-torneo">Bases</a>
+        
         <a href="galeria-liga1.html" class="btn-torneo">Galería</a>
       </div>
     `;
