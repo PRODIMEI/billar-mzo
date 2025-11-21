@@ -39,7 +39,7 @@ function createPlanets(count) {
 
 // Generamos 100 estrellas y 5 planetas
 createStars(100);
-createPlanets(10);
+createPlanets(7);
 
 
 // Efecto parallax al hacer scroll
