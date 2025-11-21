@@ -123,29 +123,30 @@ body {
 
 /* ===== RESPONSIVE MENÚ ===== */
 /* FORZAR modo móvil aunque el móvil esté horizontal */
-@media (max-width: 850px) {  
+@media (max-width: 1024px) {
+
   .menu-toggle {
-      display: block;
+    display: block !important;
   }
 
   .menu {
-      display: none !important;  /* No mostrar automáticamente */
-      position: absolute;
-      top: 80px;
-      right: 20px;
-      background: rgba(0,0,0,0.85);
-      padding: 15px;
-      border-radius: 10px;
-      z-index: 3000;
+    display: none !important;        /* 🔥 Evita menú escritorio */
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: rgba(0,0,0,0.85);
+    padding: 15px;
+    border-radius: 10px;
+    z-index: 3000;
   }
 
   .menu.show {
-      display: block !important;  /* Solo mostrar si el usuario toca el botón */
+    display: block !important;      /* Solo aparece si el usuario toca el botón */
   }
 
   .menu ul {
-      flex-direction: column;
-      gap: 10px;
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -219,6 +220,7 @@ main {
     max-width: 90%;
   }
 }
+
 
 
 
