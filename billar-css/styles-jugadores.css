@@ -191,7 +191,7 @@ main {
 /* GRID EN FILAS */
 .jugadores-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(570px, 1fr)); /* +80px más anchas */
+  grid-template-columns: repeat(auto-fill, minmax(565px, 1fr)); /* +80px más anchas */
   gap: 25px;
   padding: 20px 40px;
 }
@@ -223,6 +223,7 @@ main {
     width: 100%;
     border-radius: 10px;
 }
+
 
 
 
