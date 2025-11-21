@@ -208,7 +208,7 @@ main {
 }
 
 .card {
-  height: 420px; /* agrega altura */
+  height: 620px; /* agrega altura */
   padding: 20px;
 }
 
@@ -223,6 +223,7 @@ main {
     width: 100%;
     border-radius: 10px;
 }
+
 
 
 
