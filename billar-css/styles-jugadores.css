@@ -122,13 +122,14 @@ body {
 }
 
 /* ===== RESPONSIVE MENÚ ===== */
-@media (max-width: 550px) {
+/* FORZAR modo móvil aunque el móvil esté horizontal */
+@media (max-width: 850px) {  
   .menu-toggle {
       display: block;
   }
 
   .menu {
-      display: none;
+      display: none !important;  /* No mostrar automáticamente */
       position: absolute;
       top: 80px;
       right: 20px;
@@ -139,7 +140,7 @@ body {
   }
 
   .menu.show {
-      display: block;
+      display: block !important;  /* Solo mostrar si el usuario toca el botón */
   }
 
   .menu ul {
@@ -172,13 +173,15 @@ main {
 
 /* ===== TARJETA AJUSTADA ===== */
 .jugador-card {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(6px);
-  padding: 10px;                 /* Reducido para no hacerla más ancha */
-  border-radius: 14px;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin: 0 auto;          /* Centra la tarjeta siempre */
+  padding: 10px;
+  width: fit-content;
+  max-width: 100%;         /* 🔥 Evita desbordes en móvil */
+  display: flex;
+  justify-content: center; /* La imagen queda bien centrada */
+}
+
 
   width: fit-content;            /* 🔥 Contenedor se ajusta EXACTO al tamaño de imagen */
   margin: 0 auto;                /* Centra la tarjeta */
@@ -217,4 +220,5 @@ main {
     max-width: 90%;
   }
 }
+
 
