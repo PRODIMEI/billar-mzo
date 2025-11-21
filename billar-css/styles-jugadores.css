@@ -161,6 +161,7 @@ body {
   margin-bottom: 20px;
 }
 
+
 /* ===== TARJETAS ===== */
 .jugadores-grid {
   display: grid;
@@ -168,38 +169,53 @@ body {
   gap: 25px;
 }
 
+/* CARD DEL JUGADOR */
 .jugador-card {
-    max-width: 280px;      /* Ajusta el ancho REAL de la tarjeta */
     width: 100%;
-    margin: 0 auto 20px;   /* Centrada y con espacio abajo */
-    padding: 10px;         /* Padding pequeño */
-    border-radius: 12px;
-    background: #ffffffcc; /* Fondo claro */
-    backdrop-filter: blur(4px);
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-    overflow: hidden;
+    max-width: 280px;
+    margin: 0 auto 25px;   
+    padding: 15px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    transition: 0.25s ease;
 }
 
-/* Cuando aparecen con scroll */
-.jugador-card.visible {
-  transform: scale(1);
-  opacity: 1;
-}
-
-/* EFECTO AL PASAR EL MOUSE */
+/* HOVER MODERNO */
 .jugador-card:hover {
-  transform: scale(1.06); /* Se agranda un poco */
-  border-color: #00c8ff;
-  box-shadow:
-    0 0 10px rgba(0, 174, 255, 0.4),
-    0 0 20px rgba(0, 174, 255, 0.25),
-    0 0 35px rgba(0, 174, 255, 0.15);
-  transition: 0.25s ease;
+    transform: scale(1.07);
+    box-shadow:
+        0 0 10px rgba(0, 200, 255, 0.4),
+        0 0 25px rgba(0, 200, 255, 0.25),
+        0 0 45px rgba(0, 200, 255, 0.15);
+    border: 1px solid rgba(0, 200, 255, 0.6);
 }
+
+/* FOTO DEL JUGADOR CENTRADA Y MODERNA */
 .jugador-card img {
-  width: 70%;
-  border-radius: 18px;
-  margin-bottom: 10px;
+    width: 100%;
+    max-width: 210px;
+    border-radius: 18px;
+
+    display: block;
+    margin: 0 auto 12px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    transition: transform 0.25s ease;
+}
+
+/* Animación suave al pasar el mouse por la imagen */
+.jugador-card:hover img {
+    transform: scale(1.04);
 }
 
 
