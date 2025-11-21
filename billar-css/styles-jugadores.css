@@ -163,25 +163,25 @@ main {
 
 /* ===== GRID DE JUGADORES ===== */
 .jugadores-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  display: flex;                /* 🔥 Usamos FLEX mejor que GRID */
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 25px;
   padding: 20px;
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
 }
 
-/* ===== TARJETA INDIVIDUAL ===== */
+/* ===== TARJETA AJUSTADA ===== */
 .jugador-card {
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(6px);
-  padding: 20px;
+  padding: 10px;                 /* Reducido para no hacerla más ancha */
   border-radius: 14px;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  height: 680px;
+
+  width: fit-content;            /* 🔥 Contenedor se ajusta EXACTO al tamaño de imagen */
+  margin: 0 auto;                /* Centra la tarjeta */
 }
 
 .jugador-card:hover {
@@ -192,11 +192,12 @@ main {
 /* ===== IMAGEN ===== */
 .jugador-card img {
   width: 100%;
-  max-width: 500px;
   height: auto;
-  border-radius: 10px;
   display: block;
-  margin: 0 auto;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  max-width: 500px;              /* Ajusta según tamaño real de tu credencial */
 }
 
 /* ===== RESPONSIVE ===== */
@@ -216,3 +217,4 @@ main {
     max-width: 90%;
   }
 }
+
