@@ -149,9 +149,11 @@ body {
 }
 
 /* ===== CONTENEDOR ===== */
-.jugadores-container {
-  padding-top: 140px;
-  text-align: center;
+/* CONTENEDOR QUE LIMITA EL ANCHO TOTAL */
+.contenedor-jugadores {
+  max-width: 880px;   /* AJUSTA EL ANCHO A TU GUSTO */
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .jugadores-container h2 {
@@ -164,12 +166,6 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 25px;
-
-  /* ==== Ajuste de márgenes externos ==== */
-  max-width: 500px;       /* controla qué tan ancho puede ser */
-  margin: 0 auto;         /* centra el contenedor */
-
-  padding: 20px 20px;     /* margenes internos más pequeños */
 }
 
 .jugador-card {
@@ -208,6 +204,7 @@ body {
   border-radius: 18px;
   margin-bottom: 10px;
 }
+
 
 
 
