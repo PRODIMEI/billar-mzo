@@ -122,7 +122,7 @@ body {
 }
 
 /* ===== RESPONSIVE MENÚ ===== */
-@media (max-width: 650px) {
+@media (max-width: 550px) {
   .menu-toggle {
       display: block;
   }
@@ -223,3 +223,4 @@ main {
     width: 100%;
     border-radius: 10px;
 }
+
