@@ -149,6 +149,19 @@ body {
 }
 
 
+main {
+  position: relative;
+  z-index: 5;
+}
+
+/* Elevar todo el contenido sobre los planetas */
+.jugadores-container {
+  position: relative;
+  z-index: 5;
+}
+
+
+
 /* ===== CONTENEDOR ESPECIAL PARA LA CREDENCIAL ===== */
 .credencial-wrapper {
   width: 100%;
@@ -172,6 +185,7 @@ body {
 .credencial-wrapper img:hover {
   transform: scale(1.05);
 }
+
 
 
 
