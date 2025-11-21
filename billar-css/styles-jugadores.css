@@ -132,7 +132,7 @@ body {
   .credencial-wrapper img {
     max-width: 90%; /* Ajusta mejor en celular */
   }
-}
+
 
   .menu {
       display: none;
@@ -242,6 +242,7 @@ main {
     align-items: center;
     gap: 10px;
 }
+
 
 
 
