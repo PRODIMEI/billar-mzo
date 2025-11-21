@@ -148,75 +148,31 @@ body {
   }
 }
 
-/* ===== CONTENEDOR ===== */
-/* CONTENEDOR QUE LIMITA EL ANCHO TOTAL */
-.contenedor-jugadores {
-  max-width: 880px;   /* AJUSTA EL ANCHO A TU GUSTO */
-  margin: 0 auto;
-  padding: 10px;
+
+/* ===== CONTENEDOR ESPECIAL PARA LA CREDENCIAL ===== */
+.credencial-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;     /* separa del menú */
+  margin-bottom: 60px;
 }
 
-.jugadores-container h2 {
-  font-size: 2.4rem;
-  margin-bottom: 20px;
+.credencial-wrapper img {
+  width: 480px;           /* tamaño perfecto */
+  max-width: 90%;        
+  border-radius: 20px;    /* esquinas modernas */
+  box-shadow: 
+    0 0 15px rgba(255,255,255,0.2),
+    0 0 35px rgba(0,179,255,0.3),
+    0 0 60px rgba(0,179,255,0.15);
+  transition: transform .3s ease;
 }
 
-
-/* ===== TARJETAS ===== */
-.jugadores-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 25px;
+.credencial-wrapper img:hover {
+  transform: scale(1.05);
 }
 
-/* CARD DEL JUGADOR */
-.jugador-card {
-    width: 100%;
-    max-width: 280px;
-    margin: 0 auto 25px;   
-    padding: 15px;
-    border-radius: 18px;
-
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(6px);
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    transition: 0.25s ease;
-}
-
-/* HOVER MODERNO */
-.jugador-card:hover {
-    transform: scale(1.07);
-    box-shadow:
-        0 0 10px rgba(0, 200, 255, 0.4),
-        0 0 25px rgba(0, 200, 255, 0.25),
-        0 0 45px rgba(0, 200, 255, 0.15);
-    border: 1px solid rgba(0, 200, 255, 0.6);
-}
-
-/* FOTO DEL JUGADOR CENTRADA Y MODERNA */
-.jugador-card img {
-    width: 100%;
-    max-width: 210px;
-    border-radius: 18px;
-
-    display: block;
-    margin: 0 auto 12px;
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-    transition: transform 0.25s ease;
-}
-
-/* Animación suave al pasar el mouse por la imagen */
-.jugador-card:hover img {
-    transform: scale(1.04);
-}
 
 
 
