@@ -157,10 +157,10 @@ main {
 /* Elevar todo el contenido sobre los planetas */
 .jugadores-container {
   position: relative;
-  z-index: 5;
+  z-index: 10; /* encima del fondo galáctico */
+  text-align: center;
+  margin-top: 120px; /* para que no choque con el header fijo */
 }
-
-
 
 /* ===== CONTENEDOR ESPECIAL PARA LA CREDENCIAL ===== */
 .credencial-wrapper {
@@ -172,19 +172,17 @@ main {
 }
 
 .credencial-wrapper img {
-  width: 480px;           /* tamaño perfecto */
-  max-width: 90%;        
-  border-radius: 20px;    /* esquinas modernas */
-  box-shadow: 
-    0 0 15px rgba(255,255,255,0.2),
-    0 0 35px rgba(0,179,255,0.3),
-    0 0 60px rgba(0,179,255,0.15);
-  transition: transform .3s ease;
+  width: 420px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.45);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .credencial-wrapper img:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(0, 212, 255, 0.7);
 }
+
 
 
 
