@@ -128,6 +128,12 @@ body {
     grid-template-columns: 1fr; /* Una columna en pantallas chicas */
     padding: 10px;
   }
+  jugador-card {
+    height: auto;  /* que la tarjeta no quede gigante en celular */
+  }
+  .jugador-card img {
+    max-width: 90%;
+  }
 
   .credencial-wrapper img {
     max-width: 90%; /* Ajusta mejor en celular */
@@ -194,27 +200,38 @@ main {
   box-shadow: 0 0 35px rgba(0, 212, 255, 0.7);
 }
 
-
+.jugadores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); 
+  gap: 25px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1500px;   /* evita que se haga demasiado ancho */
+  margin: 0 auto;      /* centra el grid */
+}
 
 
 /* GRID EN FILAS */
-/* ===== GRID RESPONSIVO ===== */
 .jugadores-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* ANTES 560px */
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); 
   gap: 25px;
-  padding: 10px 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1500px;   /* evita que se haga demasiado ancho */
+  margin: 0 auto;      /* centra el grid */
 }
 
 /* TARJETA INDIVIDUAL */
 .jugador-card {
     background: rgba(255,255,255,0.15);
     backdrop-filter: blur(6px);
-    padding: 12px;
+    padding: 20px;
     border-radius: 14px;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
     text-align: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    height: 680px;     /* ALTURA MAYOR */
 }
 
 .card {
@@ -230,9 +247,12 @@ main {
 
 /* IMAGEN */
 .jugador-card img {
-  width: 100%;
-  max-width: 500px;    /* evita desbordamiento */
-  border-radius: 10px;
+    width: 100%;
+    max-width: 500px;  /* evita que se salga del contenedor */
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
 }
 
 /* === FOOTER === */
@@ -242,6 +262,7 @@ main {
     align-items: center;
     gap: 10px;
 }
+
 
 
 
