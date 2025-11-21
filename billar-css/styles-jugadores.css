@@ -169,18 +169,15 @@ body {
 }
 
 .jugador-card {
-  background: rgba(255,255,255,0.08);
-  padding: 15px;
-  border-radius: 18px;
-  text-align: center;
-  transform: scale(0.8);
-  opacity: 0;
-  transition: 0.5s ease;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.12);
-
-   /* Efecto azul tenue alrededor */
-  box-shadow: 0 0 0px rgba(0, 174, 255, 0.0);
+    max-width: 280px;      /* Ajusta el ancho REAL de la tarjeta */
+    width: 100%;
+    margin: 0 auto 20px;   /* Centrada y con espacio abajo */
+    padding: 10px;         /* Padding pequeño */
+    border-radius: 12px;
+    background: #ffffffcc; /* Fondo claro */
+    backdrop-filter: blur(4px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    overflow: hidden;
 }
 
 /* Cuando aparecen con scroll */
@@ -204,6 +201,7 @@ body {
   border-radius: 18px;
   margin-bottom: 10px;
 }
+
 
 
 
