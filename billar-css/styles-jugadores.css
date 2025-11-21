@@ -164,22 +164,21 @@ main {
 
 /* ===== GRID DE JUGADORES ===== */
 .jugadores-grid {
-  display: flex;                /* 🔥 Usamos FLEX mejor que GRID */
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 🔥 Antes era 360px */
   gap: 25px;
   padding: 20px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 /* ===== TARJETA AJUSTADA ===== */
 .jugador-card {
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  margin: 0 auto;          /* Centra la tarjeta siempre */
-  padding: 10px;
-  width: fit-content;
-  max-width: 100%;         /* 🔥 Evita desbordes en móvil */
-  display: flex;
-  justify-content: center; /* La imagen queda bien centrada */
+  margin: 0 auto;            /* Centra la tarjeta */
+  width: 100%;               /* Evita que sobresalga */
+  max-width: 500px;          /* Tamaño máximo real */
+  box-sizing: border-box;    /* 🔥 Evita que padding expanda */
 }
 
 
@@ -220,5 +219,6 @@ main {
     max-width: 90%;
   }
 }
+
 
 
