@@ -181,7 +181,7 @@ main {
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  height: 680px; /* MÁS ALTA */
+  height: 680px;
 }
 
 .jugador-card:hover {
@@ -199,7 +199,7 @@ main {
   margin: 0 auto;
 }
 
-/* ===== RESPONSIVE PARA CELULAR ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
 
   .jugadores-grid {
