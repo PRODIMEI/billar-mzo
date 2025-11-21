@@ -224,4 +224,12 @@ main {
     border-radius: 10px;
 }
 
+/* === FOOTER === */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
 
