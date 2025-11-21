@@ -122,10 +122,17 @@ body {
 }
 
 /* ===== RESPONSIVE MENÚ ===== */
-@media (max-width: 550px) {
-  .menu-toggle {
-      display: block;
+@media (max-width: 600px) {
+
+  .jugadores-grid {
+    grid-template-columns: 1fr; /* Una columna en pantallas chicas */
+    padding: 10px;
   }
+
+  .credencial-wrapper img {
+    max-width: 90%; /* Ajusta mejor en celular */
+  }
+}
 
   .menu {
       display: none;
@@ -235,6 +242,7 @@ main {
     align-items: center;
     gap: 10px;
 }
+
 
 
 
