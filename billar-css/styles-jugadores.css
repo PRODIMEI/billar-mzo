@@ -154,6 +154,8 @@ main {
   z-index: 5;
 }
 
+
+
 /* Elevar todo el contenido sobre los planetas */
 .jugadores-container {
   position: relative;
@@ -182,6 +184,43 @@ main {
   transform: scale(1.05);
   box-shadow: 0 0 35px rgba(0, 212, 255, 0.7);
 }
+
+
+
+
+/* GRID EN FILAS */
+.jugadores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 35px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+/* TARJETA INDIVIDUAL */
+.jugador-card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* EFECTO HOVER */
+.jugador-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.7);
+}
+
+/* IMAGEN */
+.jugador-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
 
 
 
