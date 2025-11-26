@@ -1,8 +1,40 @@
 /* ===== CONTENEDOR GENERAL ===== */
 
-body, html {
-    margin: 0;
-    padding: 0;
+/* ==== CORRECCIÓN TEMPORAL PARA QUE EL HEADER NO SE BAJE ==== */
+header.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+/* Evitar el bloque vacío enorme arriba */
+body {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Ajuste provisional para separar el título del header */
+.galeria-container {
+    padding-top: 130px !important;
+}
+
+/* ==== CORRECCIÓN TEMPORAL DEL MENÚ HAMBURGUESA ==== */
+.menu {
+    display: flex;
+}
+
+@media (max-width: 850px) {
+    .menu {
+        display: none;
+    }
+    .menu.show {
+        display: block;
+    }
+    #menuToggle {
+        display: block !important;
+    }
 }
 
 
