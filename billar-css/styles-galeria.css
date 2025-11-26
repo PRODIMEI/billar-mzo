@@ -1,7 +1,4 @@
-
-/* ===== CONTENEDOR GENERAL ===== */
-
-/* ==== CORRECCIÓN TEMPORAL PARA QUE EL HEADER NO SE BAJE ==== */
+/* ====== HEADER FIJO ====== */
 header.header {
     position: fixed;
     top: 0;
@@ -10,52 +7,24 @@ header.header {
     z-index: 999;
 }
 
-/* Evitar el bloque vacío enorme arriba */
-body {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* Ajuste provisional para separar el título del header */
 .galeria-container {
-    padding-top: 130px !important;
-}
-
-/* ==== CORRECCIÓN TEMPORAL DEL MENÚ HAMBURGUESA ==== */
-.menu {
-    display: flex;
-}
-
-@media (max-width: 850px) {
-    .menu {
-        display: none;
-    }
-    .menu.show {
-        display: block;
-    }
-    #menuToggle {
-        display: block !important;
-    }
-}
-
-
-.galeria-container {
+    padding-top: 120px;
     position: relative;
     z-index: 10;
     text-align: center;
-    margin-top: 0px;
 }
 
+/* ====== TÍTULO ====== */
 .galeria-container h2 {
     margin-bottom: 25px;
     font-size: 2rem;
     text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
 }
 
-/* ===== GRID ===== */
+/* ====== GRID ====== */
 .galeria-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* <<< AJUSTADO */
     gap: 25px;
     padding: 20px;
     width: 100%;
@@ -63,9 +32,9 @@ body {
     margin: 0 auto;
 }
 
-/* ===== TARJETAS ===== */
+/* ====== TARJETAS ====== */
 .galeria-card {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.12);
     backdrop-filter: blur(6px);
     padding: 15px;
     border-radius: 14px;
@@ -74,29 +43,62 @@ body {
 }
 
 .galeria-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
     box-shadow: 0 0 25px rgba(0, 212, 255, 0.7);
 }
 
-/* ===== IMÁGENES ===== */
-.galeria-card img {
+/* ====== IMÁGENES ====== */
+.galeria-card img,
+.galeria-card video {
     width: 100%;
     border-radius: 10px;
     display: block;
 }
 
-/* ===== VIDEOS ===== */
-.galeria-card video {
-    width: 100%;
-    border-radius: 10px;
-    outline: none;
+/* ====== MENÚ RESPONSIVE ====== */
+.menu {
+    display: flex;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 600px) {
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    .menu {
+        display: none;                 /* <<< AHORA SÍ SE OCULTA */
+        flex-direction: column;
+        background: rgba(10,10,25,0.97);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .menu.show {
+        display: flex;                 /* <<< SE ABRE CORRECTAMENTE */
+    }
+
+    .menu-toggle {
+        display: block;                /* <<< SE ACTIVA EL BOTÓN */
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* ====== GRID EN CELULAR ====== */
+@media (max-width: 500px) {
     .galeria-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;    /* <<< SOLO UNA COLUMNA */
         padding: 10px;
+        gap: 18px;
     }
 
     .galeria-card {
