@@ -1,104 +1,57 @@
-/* ===== CONTENEDOR GENERAL ===== */
-
-/* ==== CORRECCIÓN TEMPORAL PARA QUE EL HEADER NO SE BAJE ==== */
+/* ============================
+   CORRECCIÓN DEL ESPACIO DEL HEADER
+   ============================ */
 header.header {
-    position: fixed;
+    margin: 0;
+    padding: 10px 20px;
+    position: relative; /* Igual que en Torneos */
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
 }
 
-/* Evitar el bloque vacío enorme arriba */
+/* Ajuste para evitar 4 cm de espacio */
 body {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* Ajuste provisional para separar el título del header */
 .galeria-container {
-    padding-top: 130px !important;
+    margin-top: 40px; /* Igual que Torneos */
 }
 
-/* ==== CORRECCIÓN TEMPORAL DEL MENÚ HAMBURGUESA ==== */
+
+/* ============================
+   MENÚ RESPONSIVE IGUAL A TORNEOS
+   ============================ */
 .menu {
     display: flex;
+    gap: 1.5rem;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 768px) {
     .menu {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(10, 10, 25, 0.98);
         display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
     }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
     .menu.show {
-        display: block;
+        display: flex; /* ¡CLAVE! */
     }
+
     #menuToggle {
-        display: block !important;
-    }
-}
-
-
-.galeria-container {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    margin-top: 0px;
-}
-
-.galeria-container h2 {
-    margin-bottom: 25px;
-    font-size: 2rem;
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
-}
-
-/* ===== GRID ===== */
-.galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 25px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-}
-
-/* ===== TARJETAS ===== */
-.galeria-card {
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(6px);
-    padding: 15px;
-    border-radius: 14px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.galeria-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.7);
-}
-
-/* ===== IMÁGENES ===== */
-.galeria-card img {
-    width: 100%;
-    border-radius: 10px;
-    display: block;
-}
-
-/* ===== VIDEOS ===== */
-.galeria-card video {
-    width: 100%;
-    border-radius: 10px;
-    outline: none;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 600px) {
-    .galeria-grid {
-        grid-template-columns: 1fr;
-        padding: 10px;
-    }
-
-    .galeria-card {
-        padding: 12px;
+        display: flex !important; /* Mostrar hamburguesa */
     }
 }
