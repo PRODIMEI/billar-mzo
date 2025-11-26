@@ -1,4 +1,11 @@
 /* ===== CONTENEDOR GENERAL ===== */
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+
 .galeria-container {
     position: relative;
     z-index: 10;
