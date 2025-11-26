@@ -1,4 +1,8 @@
 /* ===== MENÚ ===== */
+
+document.getElementById("menuToggle").addEventListener("click", () => {
+    document.querySelector(".menu").classList.toggle("show");
+});
 const menuToggle = document.getElementById("menuToggle");
 const menu = document.getElementById("menu");
 
