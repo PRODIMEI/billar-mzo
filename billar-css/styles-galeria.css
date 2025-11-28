@@ -81,15 +81,11 @@ header.header {
         display: flex;                 /* <<< SE ABRE CORRECTAMENTE */
     }
 
-  /*   .menu-toggle {   */
-   /*     display: block;    */            /* <<< SE ACTIVA EL BOTÓN */
- /*   }  */
+   .menu-toggle {   
+        display: block;                /* <<< SE ACTIVA EL BOTÓN */
+    }  
 
 
-.menu-toggle {
-    position: relative;
-    z-index: 2000 !important; /* Subir el menú por encima del fondo */
-}
 
     
     .menu ul {
