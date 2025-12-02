@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería - Billar 3 Bandas</title>
+
+  <link rel="stylesheet" href="../billar-css/styles.css">
+  <link rel="stylesheet" href="../billar-css/styles-galeria.css">
+</head>
+<body>
+
+    <!-- FONDO ESPACIAL -->
+   <!-- <canvas id="starsCanvas"></canvas> 
+    <div id="planets-container"></div> -->
+  <div id="space-background"></div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="../billar-img/3b.png" alt="Logo Billar" />
+            <h1>Billar Mzo. 3 Bandas</h1>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰ <span class="menu-label">Menú</span>
+        </button>
+
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li class="submenu">
+                    <a href="#" id="torneosBtn">Torneos ▾</a>
+                    <ul class="submenu-opciones" id="submenuTorneos">
+                        <li><a href="torneos.html">Liga</a></li>
+                        <li><a href="torneos-regionales.html">Regionales</a></li>
+                        <li><a href="torneos-nacionales.html">Nacionales</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="login-jugadores.html">Jugadores</a></li>
+                <li><a href="galeria.html" class="active">Galería</a></li>
+                <li><a href="colaboradores.html">Colaboradores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="galeria-container">
+        <h2>Galería Multimedia</h2>
+
+        <div class="galeria-grid">
+
+            <!-- === EJEMPLO DE IMAGEN === -->
+            <div class="galeria-card">
+                <img src="../billar-img/billar-fotos-1ra-liga/amigos-billaristas-1.jpg" alt="Foto 1">
+            </div>
+
+            <!-- === VIDEO === -->
+            <div class="galeria-card">
+                <video controls>
+                    <source src="../billar-img/billar.videos/video1-israel.mp4" type="video/mp4">
+                </video>
+            </div>
+          
+          
+
+            <!-- AGREGA MÁS TARJETAS IGUAL QUE ESTAS -->
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Liga de Billar Carambola 3 Bandas | Manzanillo, Colima</p>
+    </footer>
+
+    <script src="../billar-js/script-galeria.js"></script>
+</body>
+</html>
