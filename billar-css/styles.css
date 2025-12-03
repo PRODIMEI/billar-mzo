@@ -93,8 +93,8 @@ body {
 }
 
 .galeria img {
-    width: 300px;    /* === width: 300px; === */
-    height: 200px;    /* === height: 200px; === */
+    width: 400px;    /* === width: 300px; === */
+    height: 600px;    /* === height: 200px; === */
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -107,27 +107,7 @@ body {
 }
 
 
-/* === GALERÍA DE VARIAS === */
-.varias {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
 
-.varias img {
-    width: 400px;    /* === width: 300px; === */
-    height: 600px;    /* === height: 200px; === */
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.varias img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.7);
-}
 
 
 /* Contenedor del fondo */
