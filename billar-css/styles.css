@@ -97,7 +97,7 @@ body {
 }
 
 .avisos img {
-    width: 380px;    /* === width: 300px; === */
+    width: 360px;    /* === width: 300px; === */
     height: 550px;    /* === height: 200px; === */
     object-fit: cover;
     border-radius: 15px;
