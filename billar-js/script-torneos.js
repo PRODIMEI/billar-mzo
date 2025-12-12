@@ -1,29 +1,12 @@
 // === TORNEOS ===
 const torneos = [
   {
-    nombre: "Torneo de Liga, Don. Pedrito Llamas. 2025",
-    inicio: "22-10-2025",
-    fin: "05-12-2025",
-    competidores: 18,
-    lugar: "La Bola Centro, Manzanillo, Colima",
-    
-    enlaces: {
-      calendario: "calendario.html",
-      partidos: "partidos.html",
-      tabla: "tabla.html",
-      bases: "Bases.html",
-      liguilla: "liguilla1.html",
-      galeria: "galeria-liga1.html"
-    }
-  },
-
-  {
     nombre: "Torneo de Liga, Entre Amigos. 2025-2026",
     inicio: "08-12-2025",
     fin: "07-03-2026",
     competidores: 22,
     lugar: "La Bola Centro, Manzanillo, Colima",
-
+    
     enlaces: {
       calendario: "liga2-calendario.html",
       partidos: "liga2-partidos.html",
@@ -31,6 +14,24 @@ const torneos = [
       bases: "liga2-bases.html",
       liguilla: "liga2-liguilla.html",
       galeria: "liga2-galeria.html"
+      
+    }
+  },
+
+  {
+   nombre: "Torneo de Liga, Don. Pedrito Llamas. 2025",
+    inicio: "22-10-2025",
+    fin: "05-12-2025",
+    competidores: 18,
+    lugar: "La Bola Centro, Manzanillo, Colima",
+
+    enlaces: {
+      calendario: "calendario.html",
+      partidos: "partidos.html",
+      tabla: "tabla.html",
+      bases: "Bases.html",
+      liguilla: "liguilla1.html",
+      galeria: "galeria-liga1.html"
     }
   }
 ];
