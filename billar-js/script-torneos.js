@@ -7,8 +7,7 @@ const torneos = [
     competidores: 18,
     lugar: "La Bola Centro, Manzanillo, Colima",
     xxx: "xxx"
-  }
-  {
+  
     nombre: "Torneo de Liga, Entre Amigos. 2025-2026",
     inicio: "08-12-2025",
     fin: "07-03-2026",
