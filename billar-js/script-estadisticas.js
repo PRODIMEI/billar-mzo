@@ -14,7 +14,7 @@ const jugadores = [
     "Amado Romero (El May)","Francisco Negrete  (Rioco)","José Arteaga  (Comaye)","Fernando  (Pollo)","Don Pedrito Llamas"
 ];
 
-// Jornadas (usted ya las definió hasta la 17)
+// Jornadas (usted ya las definió hasta la 21)
 const jornadas = {
   /* pegar aquí su objeto jornadas tal cual (omitido para brevedad en este bloque),
      pero en su archivo real debe estar completo tal como ya lo tiene */
@@ -64,7 +64,7 @@ if (Object.keys(stats).length === 0) {
 
 /**
  * cargarJornadas:
- * Llena el select #jornada con 1..17 y luego carga los partidos
+ * Llena el select #jornada con 1..21 y luego carga los partidos
  */
 function cargarJornadas() {
     const selJornada = document.getElementById("jornada");
