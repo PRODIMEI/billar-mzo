@@ -8,9 +8,10 @@
 /* -------- DATOS BASE -------- */
 // Lista de jugadores (usted ya la tenía)
 const jugadores = [
-    "Alex","Aleman","Barreto","Charro","Duende","Erick",
-    "Franc. MTT.","Ginno","Pollo","Cagochi","Israel",
-    "July","Lozoya","El May","Papis","La Comaye","Rioco","Muertero"
+    "Francisco  Caballero (Cayayan)","Adrián Méndez (Alemán)","Erick Bernal","Cristian Pineda (Kity)","Ranulfo Catalan (Chalan)",
+    "Eduardo Rendon  (Charro)","Benjamin Dimas (Caballo)","Francisco Aguilar (MTTO.)","Ginno López","Rafael  Figueroa Silva (Rafa)",
+    "Santos Chavez","Rubén Jimenéz  (Yogui)","Martín Barreto","Héctor Pineda ( Cagochi )","Israel Peña","Julio Torres","Gustavo Lozoya",
+    "Amado Romero (El May)","Francisco Negrete  (Rioco)","José Arteaga  (Comaye)","Fernando  (Pollo)","Don Pedrito Llamas"
 ];
 
 // Jornadas (usted ya las definió hasta la 17)
@@ -68,7 +69,7 @@ if (Object.keys(stats).length === 0) {
 function cargarJornadas() {
     const selJornada = document.getElementById("jornada");
     selJornada.innerHTML = "";
-    for (let i = 1; i <= 17; i++) {
+    for (let i = 1; i <= 21; i++) {
         const opt = document.createElement("option");
         opt.value = i;
         opt.textContent = `Jornada ${i}`;
