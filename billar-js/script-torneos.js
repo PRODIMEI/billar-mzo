@@ -21,7 +21,7 @@ const torneos = [
   {
    nombre: "Torneo de Liga, Don. Pedrito Llamas II. 2025-2026",
     inicio: "08-12-2025",
-    fin: "11-02-2026",
+    fin: "14-02-2026",
     competidores: 22,
     lugar: "La Bola Centro, Manzanillo, Colima",
 
