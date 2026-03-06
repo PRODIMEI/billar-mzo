@@ -36,10 +36,13 @@ playTop = rail;
 playRight = canvas.width - rail;
 playBottom = canvas.height - rail;
 
+resetBalls();
+
 }
 
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
+
 
 function createBall(x,y,color){
 
@@ -51,17 +54,33 @@ dx:0,
 dy:0,
 mass:1,
 color,
-spinX: 0,
-spinY: 0
+spinX:0,
+spinY:0
 };
 
 }
 
-const whiteBall = createBall(200,250,"white");
-const yellowBall = createBall(800,200,"yellow");
-const redBall = createBall(800,350,"red");
+
+const whiteBall = createBall(0,0,"white");
+const yellowBall = createBall(0,0,"yellow");
+const redBall = createBall(0,0,"red");
 
 const balls = [whiteBall,yellowBall,redBall];
+
+
+function resetBalls(){
+
+whiteBall.x = canvas.width*0.25;
+whiteBall.y = canvas.height*0.5;
+
+yellowBall.x = canvas.width*0.75;
+yellowBall.y = canvas.height*0.35;
+
+redBall.x = canvas.width*0.75;
+redBall.y = canvas.height*0.65;
+
+}
+
 
 function drawTable(){
 
@@ -80,6 +99,7 @@ canvas.height-rail*2
 drawDiamonds();
 
 }
+
 
 function drawDiamonds(){
 
@@ -108,6 +128,7 @@ drawDiamond(canvas.width-rail/2,y);
 
 }
 
+
 function drawDiamond(x,y){
 
 ctx.beginPath();
@@ -119,6 +140,7 @@ ctx.fill();
 
 }
 
+
 function drawBall(ball){
 
 ctx.beginPath();
@@ -127,6 +149,7 @@ ctx.fillStyle=ball.color;
 ctx.fill();
 
 }
+
 
 function drawCue(){
 
@@ -153,6 +176,7 @@ ctx.stroke();
 
 }
 
+
 function drawGuide(){
 
 if(aiming){
@@ -168,42 +192,42 @@ ctx.stroke();
 
 }
 
+
 function updateBall(ball){
 
-    ball.x += ball.dx;
-    ball.y += ball.dy;
+ball.x += ball.dx;
+ball.y += ball.dy;
 
-    ball.dx *= friction;
-    ball.dy *= friction;
+ball.dx *= friction;
+ball.dy *= friction;
 
-    if (ball.x < playLeft + ball.radius){
-        ball.x = playLeft + ball.radius;
-        ball.dx *= -cushionBounce;
-    }
 
-    if (ball.x > playRight - ball.radius){
-        ball.x = playRight - ball.radius;
-        ball.dx *= -cushionBounce;
-    }
-
-    if (ball.y < playTop + ball.radius){
-        ball.y = playTop + ball.radius;
-        ball.dy *= -cushionBounce;
-    }
-
-    if (ball.y > playBottom - ball.radius){
-        ball.y = playBottom - ball.radius;
-        ball.dy *= -cushionBounce;
-    }
-
-   
-
-    // detener bola cuando ya casi no se mueve
-    if (Math.abs(ball.dx) < 0.02) ball.dx = 0;
-    if (Math.abs(ball.dy) < 0.02) ball.dy = 0;
-
-   
+if (ball.x < playLeft + ball.radius){
+ball.x = playLeft + ball.radius;
+ball.dx *= -cushionBounce;
 }
+
+if (ball.x > playRight - ball.radius){
+ball.x = playRight - ball.radius;
+ball.dx *= -cushionBounce;
+}
+
+if (ball.y < playTop + ball.radius){
+ball.y = playTop + ball.radius;
+ball.dy *= -cushionBounce;
+}
+
+if (ball.y > playBottom - ball.radius){
+ball.y = playBottom - ball.radius;
+ball.dy *= -cushionBounce;
+}
+
+
+if (Math.abs(ball.dx) < 0.02) ball.dx = 0;
+if (Math.abs(ball.dy) < 0.02) ball.dy = 0;
+
+}
+
 
 function resolveCollision(b1,b2){
 
@@ -245,6 +269,7 @@ document.getElementById("score").textContent=++score;
 
 }
 
+
 function moving(){
 
 return balls.some(b =>
@@ -253,24 +278,24 @@ Math.abs(b.dx)>0.05 || Math.abs(b.dy)>0.05
 
 }
 
+
 function shoot(){
 
-    const dx = mouseX - whiteBall.x;
-    const dy = mouseY - whiteBall.y;
+const dx = mouseX - whiteBall.x;
+const dy = mouseY - whiteBall.y;
 
-    const angle = Math.atan2(dy, dx);
+const angle = Math.atan2(dy, dx);
 
-    const power = pullDistance * 0.18;
+const power = pullDistance * 0.18;
 
-    // tiro recto (sin desviación)
-    whiteBall.dx = Math.cos(angle) * power * 1.55;
-    whiteBall.dy = Math.sin(angle) * power * 1.55;
+whiteBall.dx = Math.cos(angle) * power * 1.55;
+whiteBall.dy = Math.sin(angle) * power * 1.55;
 
-    // guardar efecto para usarlo después
-    whiteBall.spinX = spinX;
-    whiteBall.spinY = spinY;
+whiteBall.spinX = spinX;
+whiteBall.spinY = spinY;
 
 }
+
 
 function update(){
 
@@ -299,11 +324,13 @@ requestAnimationFrame(update);
 
 }
 
+
 canvas.addEventListener("mousedown",e=>{
 
 if(!moving()) aiming=true;
 
 });
+
 
 canvas.addEventListener("mousemove",e=>{
 
@@ -324,6 +351,7 @@ powerBar.style.width = (pullDistance*0.8)+"%";
 
 });
 
+
 canvas.addEventListener("mouseup",()=>{
 
 if(aiming){
@@ -338,9 +366,11 @@ powerBar.style.width="0%";
 
 });
 
+
 const spinRadius = 60;
 const spinCenterX = spinCanvas.width/2;
 const spinCenterY = spinCanvas.height/2;
+
 
 function drawSpinSelector(){
 
@@ -355,8 +385,10 @@ spinCtx.stroke();
 spinCtx.beginPath();
 spinCtx.moveTo(spinCenterX-spinRadius,spinCenterY);
 spinCtx.lineTo(spinCenterX+spinRadius,spinCenterY);
+
 spinCtx.moveTo(spinCenterX,spinCenterY-spinRadius);
 spinCtx.lineTo(spinCenterX,spinCenterY+spinRadius);
+
 spinCtx.strokeStyle="rgba(0,0,0,0.3)";
 spinCtx.stroke();
 
@@ -373,11 +405,13 @@ spinCtx.fill();
 
 }
 
-spinCanvas.addEventListener("mousedown",e=>{
+
+spinCanvas.addEventListener("mousedown",()=>{
 
 draggingSpin=true;
 
 });
+
 
 spinCanvas.addEventListener("mousemove",e=>{
 
@@ -405,11 +439,13 @@ spinY = dy;
 
 });
 
+
 spinCanvas.addEventListener("mouseup",()=>{
 
 draggingSpin=false;
 
 });
+
 
 spinCanvas.addEventListener("mouseleave",()=>{
 
@@ -417,12 +453,14 @@ draggingSpin=false;
 
 });
 
+
 function spinLoop(){
 
 drawSpinSelector();
 requestAnimationFrame(spinLoop);
 
 }
+
 
 update();
 spinLoop();
