@@ -42,6 +42,7 @@ resetBalls();
 
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
+resetBalls();
 
 
 function createBall(x,y,color){
