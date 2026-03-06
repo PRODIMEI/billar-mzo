@@ -26,11 +26,6 @@ const rail = 40;
 
 let playLeft, playRight, playTop, playBottom;
 
-
-// ===============================
-// RESPONSIVE CANVAS
-// ===============================
-
 function resizeCanvas(){
 
 canvas.width = canvas.clientWidth;
@@ -46,12 +41,6 @@ resetBalls();
 }
 
 window.addEventListener("resize", resizeCanvas);
-resizeCanvas();
-
-
-// ===============================
-// CREAR BOLAS
-// ===============================
 
 function createBall(x,y,color){
 
@@ -75,11 +64,6 @@ const redBall = createBall(0,0,"red");
 
 const balls = [whiteBall,yellowBall,redBall];
 
-
-// ===============================
-// POSICION INICIAL
-// ===============================
-
 function resetBalls(){
 
 whiteBall.x = canvas.width*0.25;
@@ -92,11 +76,6 @@ redBall.x = canvas.width*0.75;
 redBall.y = canvas.height*0.65;
 
 }
-
-
-// ===============================
-// MESA
-// ===============================
 
 function drawTable(){
 
@@ -115,11 +94,6 @@ canvas.height-rail*2
 drawDiamonds();
 
 }
-
-
-// ===============================
-// DIAMANTES
-// ===============================
 
 function drawDiamonds(){
 
@@ -159,11 +133,6 @@ ctx.fill();
 
 }
 
-
-// ===============================
-// DIBUJAR BOLA
-// ===============================
-
 function drawBall(ball){
 
 ctx.beginPath();
@@ -172,11 +141,6 @@ ctx.fillStyle=ball.color;
 ctx.fill();
 
 }
-
-
-// ===============================
-// TACO
-// ===============================
 
 function drawCue(){
 
@@ -203,11 +167,6 @@ ctx.stroke();
 
 }
 
-
-// ===============================
-// GUIA
-// ===============================
-
 function drawGuide(){
 
 if(aiming){
@@ -222,11 +181,6 @@ ctx.stroke();
 }
 
 }
-
-
-// ===============================
-// MOVIMIENTO BOLAS
-// ===============================
 
 function updateBall(ball){
 
@@ -260,11 +214,6 @@ if (Math.abs(ball.dx) < 0.02) ball.dx = 0;
 if (Math.abs(ball.dy) < 0.02) ball.dy = 0;
 
 }
-
-
-// ===============================
-// COLISIONES
-// ===============================
 
 function resolveCollision(b1,b2){
 
@@ -306,11 +255,6 @@ document.getElementById("score").textContent=++score;
 
 }
 
-
-// ===============================
-// DETECTAR MOVIMIENTO
-// ===============================
-
 function moving(){
 
 return balls.some(b =>
@@ -318,11 +262,6 @@ Math.abs(b.dx)>0.05 || Math.abs(b.dy)>0.05
 );
 
 }
-
-
-// ===============================
-// DISPARO
-// ===============================
 
 function shoot(){
 
@@ -340,11 +279,6 @@ whiteBall.spinX = spinX;
 whiteBall.spinY = spinY;
 
 }
-
-
-// ===============================
-// GAME LOOP
-// ===============================
 
 function update(){
 
@@ -368,11 +302,6 @@ drawCue();
 requestAnimationFrame(update);
 
 }
-
-
-// ===============================
-// CONTROLES PC
-// ===============================
 
 canvas.addEventListener("mousedown",e=>{
 if(!moving()) aiming=true;
@@ -411,64 +340,6 @@ powerBar.style.width="0%";
 
 });
 
-
-// ===============================
-// CONTROLES MOVIL
-// ===============================
-
-canvas.addEventListener("touchstart",e=>{
-
-e.preventDefault();
-
-const rect = canvas.getBoundingClientRect();
-
-mouseX = e.touches[0].clientX - rect.left;
-mouseY = e.touches[0].clientY - rect.top;
-
-if(!moving()) aiming=true;
-
-});
-
-canvas.addEventListener("touchmove",e=>{
-
-e.preventDefault();
-
-const rect = canvas.getBoundingClientRect();
-
-mouseX = e.touches[0].clientX - rect.left;
-mouseY = e.touches[0].clientY - rect.top;
-
-if(aiming){
-
-const dist = Math.hypot(mouseX-whiteBall.x,mouseY-whiteBall.y);
-
-pullDistance = Math.min(dist,120);
-
-powerBar.style.width = (pullDistance*0.8)+"%";
-
-}
-
-});
-
-canvas.addEventListener("touchend",()=>{
-
-if(aiming){
-
-shoot();
-
-aiming=false;
-pullDistance=0;
-powerBar.style.width="0%";
-
-}
-
-});
-
-
-// ===============================
-// SELECTOR DE EFECTO
-// ===============================
-
 const spinRadius = 60;
 const spinCenterX = spinCanvas.width/2;
 const spinCenterY = spinCanvas.height/2;
@@ -501,13 +372,14 @@ spinCenterY+spinY,
 0,
 Math.PI*2
 );
-
 spinCtx.fillStyle="red";
 spinCtx.fill();
 
 }
 
-spinCanvas.addEventListener("mousedown",()=> draggingSpin=true);
+spinCanvas.addEventListener("mousedown",()=>{
+draggingSpin=true;
+});
 
 spinCanvas.addEventListener("mousemove",e=>{
 
@@ -535,18 +407,19 @@ spinY = dy;
 
 });
 
-spinCanvas.addEventListener("mouseup",()=> draggingSpin=false);
-spinCanvas.addEventListener("mouseleave",()=> draggingSpin=false);
+spinCanvas.addEventListener("mouseup",()=>{
+draggingSpin=false;
+});
 
-
-// ===============================
-// LOOP SPIN
-// ===============================
+spinCanvas.addEventListener("mouseleave",()=>{
+draggingSpin=false;
+});
 
 function spinLoop(){
 drawSpinSelector();
 requestAnimationFrame(spinLoop);
 }
 
+resizeCanvas();
 update();
 spinLoop();
