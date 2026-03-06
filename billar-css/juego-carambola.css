@@ -18,11 +18,15 @@ border-radius:10px;
 }
 
 #gameCanvas{
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    display: block;
-    margin: auto;
+width:100%;
+max-width:1000px;
+display:block;
+margin:auto;
+}
+
+#spinCanvas{
+display:block;
+margin:20px auto;
 }
 
 .ui-panel{
