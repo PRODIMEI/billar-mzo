@@ -17,6 +17,7 @@ padding:20px;
 }
 
 canvas{
+touch-action:none;  
 border-radius:10px;
 }
 
