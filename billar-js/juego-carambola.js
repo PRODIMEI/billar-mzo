@@ -47,7 +47,7 @@ function createBall(x,y,color){
 return{
 x,
 y,
-radius:12,
+radius:14,
 dx:0,
 dy:0,
 mass:1,
