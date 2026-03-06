@@ -18,14 +18,11 @@ border-radius:10px;
 }
 
 #gameCanvas{
-background:#0b5e2b;
-width: 100%;
- /* width:90vw; */
-max-width:1000px;
-aspect-ratio:2/1;
-height: auto;
-display: block;
-margin: auto;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    display: block;
+    margin: auto;
 }
 
 .ui-panel{
