@@ -462,6 +462,72 @@ requestAnimationFrame(spinLoop);
 
 }
 
+canvas.addEventListener("mouseup",()=>{
+
+if(aiming){
+
+shoot();
+
+aiming=false;
+pullDistance=0;
+powerBar.style.width="0%";
+
+}
+
+});
+
+
+// ===== SOPORTE PARA CELULAR =====
+
+canvas.addEventListener("touchstart", e=>{
+
+e.preventDefault();
+
+const rect = canvas.getBoundingClientRect();
+
+mouseX = e.touches[0].clientX - rect.left;
+mouseY = e.touches[0].clientY - rect.top;
+
+if(!moving()) aiming=true;
+
+});
+
+
+canvas.addEventListener("touchmove", e=>{
+
+e.preventDefault();
+
+const rect = canvas.getBoundingClientRect();
+
+mouseX = e.touches[0].clientX - rect.left;
+mouseY = e.touches[0].clientY - rect.top;
+
+if(aiming){
+
+const dist = Math.hypot(mouseX-whiteBall.x,mouseY-whiteBall.y);
+
+pullDistance = Math.min(dist,120);
+
+powerBar.style.width = (pullDistance*0.8)+"%";
+
+}
+
+});
+
+
+canvas.addEventListener("touchend", ()=>{
+
+if(aiming){
+
+shoot();
+
+aiming=false;
+pullDistance=0;
+powerBar.style.width="0%";
+
+}
+
+});
 
 update();
 spinLoop();
