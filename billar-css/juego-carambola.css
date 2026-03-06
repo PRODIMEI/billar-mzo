@@ -24,10 +24,10 @@ border-radius:10px;
 #gameCanvas{
 width:100%;
 max-width:1000px;
-aspect-ratio:2/1;
+height:auto;
+aspect-ratio: 2 / 1;
 display:block;
 margin:auto;
-background:#0b5e2b;
 }
 
 #spinCanvas{
