@@ -41,6 +41,8 @@ resetBalls();
 }
 
 window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
 
 function createBall(x,y,color){
 
@@ -58,11 +60,13 @@ spinY:0
 
 }
 
+
 const whiteBall = createBall(0,0,"white");
 const yellowBall = createBall(0,0,"yellow");
 const redBall = createBall(0,0,"red");
 
 const balls = [whiteBall,yellowBall,redBall];
+
 
 function resetBalls(){
 
@@ -76,6 +80,7 @@ redBall.x = canvas.width*0.75;
 redBall.y = canvas.height*0.65;
 
 }
+
 
 function drawTable(){
 
@@ -94,6 +99,7 @@ canvas.height-rail*2
 drawDiamonds();
 
 }
+
 
 function drawDiamonds(){
 
@@ -122,6 +128,7 @@ drawDiamond(canvas.width-rail/2,y);
 
 }
 
+
 function drawDiamond(x,y){
 
 ctx.beginPath();
@@ -133,6 +140,7 @@ ctx.fill();
 
 }
 
+
 function drawBall(ball){
 
 ctx.beginPath();
@@ -141,6 +149,7 @@ ctx.fillStyle=ball.color;
 ctx.fill();
 
 }
+
 
 function drawCue(){
 
@@ -167,6 +176,7 @@ ctx.stroke();
 
 }
 
+
 function drawGuide(){
 
 if(aiming){
@@ -182,6 +192,7 @@ ctx.stroke();
 
 }
 
+
 function updateBall(ball){
 
 ball.x += ball.dx;
@@ -189,6 +200,17 @@ ball.y += ball.dy;
 
 ball.dx *= friction;
 ball.dy *= friction;
+
+
+/* EFECTO (SPIN) */
+
+if(ball === whiteBall){
+
+ball.dx += -ball.spinY * 0.0003;
+ball.dy += ball.spinX * 0.0003;
+
+}
+
 
 if (ball.x < playLeft + ball.radius){
 ball.x = playLeft + ball.radius;
@@ -210,10 +232,12 @@ ball.y = playBottom - ball.radius;
 ball.dy *= -cushionBounce;
 }
 
+
 if (Math.abs(ball.dx) < 0.02) ball.dx = 0;
 if (Math.abs(ball.dy) < 0.02) ball.dy = 0;
 
 }
+
 
 function resolveCollision(b1,b2){
 
@@ -255,6 +279,7 @@ document.getElementById("score").textContent=++score;
 
 }
 
+
 function moving(){
 
 return balls.some(b =>
@@ -262,6 +287,7 @@ Math.abs(b.dx)>0.05 || Math.abs(b.dy)>0.05
 );
 
 }
+
 
 function shoot(){
 
@@ -272,13 +298,14 @@ const angle = Math.atan2(dy, dx);
 
 const power = pullDistance * 0.18;
 
-whiteBall.dx = Math.cos(angle) * power * 1.55;
-whiteBall.dy = Math.sin(angle) * power * 1.55;
+whiteBall.dx = Math.cos(angle) * power * 1.7;
+whiteBall.dy = Math.sin(angle) * power * 1.7;
 
 whiteBall.spinX = spinX;
 whiteBall.spinY = spinY;
 
 }
+
 
 function update(){
 
@@ -289,9 +316,13 @@ drawTable();
 balls.forEach(updateBall);
 
 for(let i=0;i<balls.length;i++){
+
 for(let j=i+1;j<balls.length;j++){
+
 resolveCollision(balls[i],balls[j]);
+
 }
+
 }
 
 balls.forEach(drawBall);
@@ -303,9 +334,15 @@ requestAnimationFrame(update);
 
 }
 
+
+/* CONTROLES PC */
+
 canvas.addEventListener("mousedown",e=>{
+
 if(!moving()) aiming=true;
+
 });
+
 
 canvas.addEventListener("mousemove",e=>{
 
@@ -326,6 +363,7 @@ powerBar.style.width = (pullDistance*0.8)+"%";
 
 });
 
+
 canvas.addEventListener("mouseup",()=>{
 
 if(aiming){
@@ -340,9 +378,62 @@ powerBar.style.width="0%";
 
 });
 
+
+/* CONTROLES MOVIL */
+
+canvas.addEventListener("touchstart",e=>{
+
+const rect = canvas.getBoundingClientRect();
+
+mouseX = e.touches[0].clientX - rect.left;
+mouseY = e.touches[0].clientY - rect.top;
+
+if(!moving()) aiming=true;
+
+});
+
+
+canvas.addEventListener("touchmove",e=>{
+
+const rect = canvas.getBoundingClientRect();
+
+mouseX = e.touches[0].clientX - rect.left;
+mouseY = e.touches[0].clientY - rect.top;
+
+if(aiming){
+
+const dist = Math.hypot(mouseX-whiteBall.x,mouseY-whiteBall.y);
+
+pullDistance = Math.min(dist,120);
+
+powerBar.style.width = (pullDistance*0.8)+"%";
+
+}
+
+});
+
+
+canvas.addEventListener("touchend",()=>{
+
+if(aiming){
+
+shoot();
+
+aiming=false;
+pullDistance=0;
+powerBar.style.width="0%";
+
+}
+
+});
+
+
+/* SELECTOR DE EFECTO */
+
 const spinRadius = 60;
 const spinCenterX = spinCanvas.width/2;
 const spinCenterY = spinCanvas.height/2;
+
 
 function drawSpinSelector(){
 
@@ -377,9 +468,13 @@ spinCtx.fill();
 
 }
 
+
 spinCanvas.addEventListener("mousedown",()=>{
+
 draggingSpin=true;
+
 });
+
 
 spinCanvas.addEventListener("mousemove",e=>{
 
@@ -407,19 +502,28 @@ spinY = dy;
 
 });
 
+
 spinCanvas.addEventListener("mouseup",()=>{
+
 draggingSpin=false;
+
 });
+
 
 spinCanvas.addEventListener("mouseleave",()=>{
+
 draggingSpin=false;
+
 });
 
+
 function spinLoop(){
+
 drawSpinSelector();
 requestAnimationFrame(spinLoop);
+
 }
 
-resizeCanvas();
+
 update();
 spinLoop();
