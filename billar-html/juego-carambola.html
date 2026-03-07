@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carambola 3 Bandas</title>
 
 <link rel="stylesheet" href="../billar-css/juego-carambola.css">
@@ -18,31 +15,26 @@
 
 <div class="game-container">
 
-    <!-- MESA -->
-    <canvas id="gameCanvas" width="1000" height="500"></canvas>
+<canvas id="gameCanvas"></canvas>
 
-    <div class="ui-panel">
+<div class="ui-panel">
 
-        <p>Puntos: <span id="score">0</span></p>
+<p>Puntos: <span id="score">0</span></p>
 
-        <div class="power-container">
-            <div id="powerBar"></div>
-        </div>
+<div class="power-container">
+<div id="powerBar"></div>
+</div>
 
-        <h3>Efecto</h3>
+<h3>Efecto</h3>
+<canvas id="spinCanvas" width="150" height="150"></canvas>
 
-        <!-- SELECTOR DE EFECTO -->
-        <canvas id="spinCanvas" width="150" height="150"></canvas>
-
-    </div>
+</div>
 
 </div>
 
 <audio id="hitSound"
 src="https://assets.mixkit.co/sfx/preview/mixkit-game-ball-tap-2073.mp3">
 </audio>
-
-<audio id="hitSound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-ball-tap-2073.mp3"></audio>
 
 <script src="../billar-js/juego-carambola.js" defer></script>
 
