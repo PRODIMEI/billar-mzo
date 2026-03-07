@@ -533,5 +533,4 @@ requestAnimationFrame(spinLoop);
 }
 
 
-update();
-spinLoop();
+
