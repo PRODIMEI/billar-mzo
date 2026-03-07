@@ -39,6 +39,14 @@ playBottom = canvas.height - rail;
 resetBalls();
 
 }
+window.addEventListener("load", () => {
+
+resizeCanvas();
+update();
+spinLoop();
+
+});
+
 
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
