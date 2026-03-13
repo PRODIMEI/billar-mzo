@@ -38,7 +38,7 @@ const jornadas = {
 //   18: [[]],
 //   19: [[]],
 //   20: [[]],
-// 21: [["Erick Bernal","Martín Barreto"],["Adrián Méndez (Alemán)","Miguelito"],["Eduardo Rendon (Charro)","Héctor Pineda (Cagochi)"],["Alejandro Torres (Alex)","Fernando (Pollo)"],["Santos Chavez","Israel Peña"],["Ramon","Kechis"],["Cristian Pineda (Kity)","Francisco Negrete (Rioco)"],["Rafael Figueroa Silva (Rafa)","Coliman"],["Cayetano (Caye)","Julio Torres"],["Matias","Gustavo Lozoya"],["Francisco Aguilar (MTTO.)","Ginno López"]]  
+// 21: [[]]  
    
 };
 
