@@ -8,7 +8,7 @@
 /* -------- DATOS BASE -------- */
 // Lista de jugadores (usted ya la tenía)
 const jugadores = [
-    "Ramon","Adrián Méndez (Alemán)","Erick Bernal","Cristian Pineda (Kity)","Miguelito","Eduardo Rendon (Charro)",
+   "Ramon","Adrián Méndez (Alemán)","Erick Bernal","Cristian Pineda (Kity)","Miguelito","Eduardo Rendon (Charro)",
    "Cayetano (Caye)","Francisco Aguilar (MTTO.)","Ginno López","Rafael Figueroa Silva (Rafa)","Santos Chavez",
    "Matias","Martín Barreto","Héctor Pineda (Cagochi)","Israel Peña","Julio Torres","Gustavo Lozoya",
     "Kechis","Francisco Negrete (Rioco)","Coliman","Fernando (Pollo)","Alejandro Torres (Alex)"
