@@ -39,7 +39,7 @@ const torneos = [
 //];
 
  {
-   nombre: "Torneo de Liga, Entre Amigos. 2026",
+   nombre: "3ra-Liga, Torneo Entre Amigos. 2026",
     inicio: "02-03-2026",
     fin: "25-04-2026",
     competidores: 22,
