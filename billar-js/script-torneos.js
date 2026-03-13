@@ -18,10 +18,30 @@ const torneos = [
  //   }
 //  },
 
-  {
-   nombre: "Torneo de Liga, Don. Pedrito Llamas II. 2025-2026",
-    inicio: "08-12-2025",
-    fin: "14-02-2026",
+//-----------------------------------------------------------------    
+
+//  {
+//   nombre: "Torneo de Liga, Don. Pedrito Llamas II. 2025-2026",
+//    inicio: "08-12-2025",
+//    fin: "14-02-2026",
+//    competidores: 22,
+//    lugar: "La Bola Centro, Manzanillo, Colima",
+
+ //   enlaces: {
+ //     calendario: "calendario.html",
+ //     partidos: "partidos.html",
+ //     tabla: "tabla.html",
+  //    bases: "Bases.html",
+  //    liguilla: "liguilla1.html",
+ //     galeria: "galeria-liga1.html"
+ //   }
+//  }
+//];
+
+ {
+   nombre: "Torneo de Liga, Entre Amigos. 2026",
+    inicio: "02-03-2026",
+    fin: "25-04-2026",
     competidores: 22,
     lugar: "La Bola Centro, Manzanillo, Colima",
 
@@ -35,6 +55,9 @@ const torneos = [
     }
   }
 ];
+
+
+
 
 const torneosContainer = document.getElementById("torneosContainer");
 
