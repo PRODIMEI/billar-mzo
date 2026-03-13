@@ -59,9 +59,13 @@ selectJornada.addEventListener("change", () => {
 
 // -------- localStorage: datos acumulados por jugador --------
 let stats = JSON.parse(localStorage.getItem("ligaStats")) || {};
-if (Object.keys(stats).length === 0) {
-    jugadores.forEach(j => stats[j] = { jj: 0, jg: 0, jp: 0, cf: 0, cc: 0 });
-}
+
+// Asegurar que TODOS los jugadores existan en stats
+jugadores.forEach(j => {
+    if (!stats[j]) {
+        stats[j] = { jj: 0, jg: 0, jp: 0, cf: 0, cc: 0 };
+    }
+});
 
 /* ---------------------- FUNCIONES ------------------------ */
 
