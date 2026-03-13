@@ -18,9 +18,9 @@ const jugadores = [
 const jornadas = {
   /* pegar aquí su objeto jornadas tal cual (omitido para brevedad en este bloque),
      pero en su archivo real debe estar completo tal como ya lo tiene */
-   1: [["Erick Bernal","Martín Barreto"],["Adrián Méndez (Alemán)","Miguelito"],["Eduardo Rendon (Charro)","Héctor Pineda (Cagochi)"],["Alejandro Torres (Alex)","Fernando (Pollo)"],["Santos Chavez","Israel Peña"],["Ramon","Kechis"],["Cristian Pineda (Kity)","Francisco Negrete (Rioco)"],["Rafael Figueroa Silva (Rafa)","Coliman"],["Cayetano (Caye)","Julio Torres"],["Matias","Gustavo Lozoya"],["Francisco Aguilar (MTTO.)","Ginno López"]],
-   2: [["Erick Bernal","Martín Barreto"],["Adrián Méndez (Alemán)","Miguelito"],["Eduardo Rendon (Charro)","Héctor Pineda (Cagochi)"],["Alejandro Torres (Alex)","Fernando (Pollo)"],["Santos Chavez","Israel Peña"],["Ramon","Kechis"],["Cristian Pineda (Kity)","Francisco Negrete (Rioco)"],["Rafael Figueroa Silva (Rafa)","Coliman"],["Cayetano (Caye)","Julio Torres"],["Matias","Gustavo Lozoya"],["Francisco Aguilar (MTTO.)","Ginno López"]],
-   3: [[]],
+   1: [["Erick Bernal","Martín Barreto"],["Adrián Méndez (Alemán)","Miguelito"],["Eduardo Rendon (Charro)","Héctor Pineda (Cagochi)"],["Alejandro Torres (Alex)","Fernando (Pollo)"],["Santos Chavez","Israel Peña"],["Ramon","Kechis"],["Cristian Pineda (Kity)","Francisco Negrete (Rioco)"],["Rafael Figueroa Silva (Rafa)",""],["Cayetano (Caye)","Julio Torres"],["Matias","Gustavo Lozoya"],["Francisco Aguilar (MTTO.)","Ginno López"]],
+   2: [["Erick Bernal","Adrián Méndez (Alemán)"],["Eduardo Rendon (Charro)","Martín Barreto"],["Alejandro Torres (Alex)","Miguelito"],["Santos Chavez","Héctor Pineda (Cagochi)"],["Ramon","Fernando (Pollo)"],["Cristian Pineda (Kity)","Israel Peña"],["Rafael Figueroa Silva (Rafa)","Kechis"],["Cayetano (Caye)","Francisco Negrete (Rioco)"],["Matias","Coliman"],["Francisco Aguilar (MTTO.)","Julio Torres"],["Ginno López","Gustavo Lozoya"]],
+   3: [["Erick Bernal","Eduardo Rendon (Charro)"],["Alejandro Torres (Alex)","Adrián Méndez (Alemán)"],["Santos Chavez","Martín Barreto"],["Ramon","Miguelito"],["Cristian Pineda (Kity)","Héctor Pineda (Cagochi)"],["Rafael Figueroa Silva (Rafa)","Fernando (Pollo)"],["Cayetano (Caye)","Israel Peña"],["Matias","Kechis"],["Francisco Aguilar (MTTO.)","Francisco Negrete (Rioco)"],["Ginno López","Coliman"],["Gustavo Lozoya","Julio Torres"]],
    4: [[]],
    5: [[]],
    6: [[]],
