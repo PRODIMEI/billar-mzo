@@ -222,7 +222,12 @@ function resolveCollision(b1, b2) {
     const dx = b2.x - b1.x;
     const dy = b2.y - b1.y;
 
-    const dist = Math.hypot(dx, dy);
+    let dist = Math.hypot(dx, dy);
+
+    // 🔥 SOLUCIÓN CLAVE: evitar división entre 0
+    if (dist === 0) {
+        dist = 0.01;
+    }
 
     if (dist < b1.radius + b2.radius) {
 
@@ -232,8 +237,9 @@ function resolveCollision(b1, b2) {
         const nx = dx / dist;
         const ny = dy / dist;
 
-        const overlap = b1.radius + b2.radius - dist;
+        const overlap = (b1.radius + b2.radius) - dist;
 
+        // separar correctamente
         b1.x -= nx * overlap / 2;
         b1.y -= ny * overlap / 2;
 
@@ -250,6 +256,12 @@ function resolveCollision(b1, b2) {
 
         b2.dx += p * b1.mass * nx;
         b2.dy += p * b1.mass * ny;
+
+        // 🔥 PROTECCIÓN EXTRA contra NaN
+        if (isNaN(b1.dx)) b1.dx = 0;
+        if (isNaN(b1.dy)) b1.dy = 0;
+        if (isNaN(b2.dx)) b2.dx = 0;
+        if (isNaN(b2.dy)) b2.dy = 0;
 
         score++;
         document.getElementById("score").textContent = score;
