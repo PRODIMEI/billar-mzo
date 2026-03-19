@@ -1,4 +1,9 @@
 body{
+margin: 0;
+padding: 0;
+background: #111;
+overflow-x: hidden;
+  
 background:#0b0b0b;
 color:white;
 font-family:Arial;
@@ -7,20 +12,30 @@ margin:0;
 }
 
 .game-container{
-display:flex;
+width: 100%;
+max-width: 100vw;
+display: flex;
+flex-direction: column;
+align-items: center;
+  
+/*display:flex;
 justify-content:center;
 align-items:flex-start;
 gap:30px;
 flex-wrap:wrap;
-padding:20px;
+padding:20px;*/
 }
 
 #gameCanvas{
-width:100%;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+
+/*width:100%;
 max-width:1000px;
 aspect-ratio:2/1;
 background:black;
-border-radius:10px;
+border-radius:10px;*/
 }
 
 .ui-panel{
@@ -28,12 +43,19 @@ width:200px;
 }
 
 .power-container{
-width:100%;
+  width: 90%;
+    height: 10px;
+    background: #333;
+    margin: 10px 0;
+    border-radius: 5px;
+    overflow: hidden;
+  
+/*width:100%;
 height:15px;
 background:#333;
 margin:10px 0;
 border-radius:5px;
-overflow:hidden;
+overflow:hidden;*/
 }
 
 #powerBar{
@@ -43,22 +65,27 @@ background:lime;
 }
 
 #spinCanvas{
-display:block;
+  width: 120px;
+  height: 120px;
+  margin-top: 10px;
+  
+/*display:block;
 margin:20px auto;
 background:#222;
 border-radius:50%;
-cursor:pointer;
+cursor:pointer;*/
 }
 
-@media (max-width:900px){
+/* AJUSTE PARA CELULAR */
+@media (max-width: 600px) {
 
-.game-container{
-flex-direction:column;
-align-items:center;
-}
+    #spinCanvas {
+        width: 100px;
+        height: 100px;
+    }
 
-.ui-panel{
-width:90%;
-}
+    .power-container {
+        width: 95%;
+    }
 
 }
