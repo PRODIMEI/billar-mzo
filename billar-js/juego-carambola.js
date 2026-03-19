@@ -185,6 +185,14 @@ function drawCue() {
 // 🎱 FÍSICA
 function updateBall(ball) {
 
+    // 🔥 evitar que desaparezcan por NaN
+if (isNaN(ball.x) || isNaN(ball.y)) {
+    ball.x = canvas.width / 2;
+    ball.y = canvas.height / 2;
+    ball.dx = 0;
+    ball.dy = 0;
+}
+
     ball.x += ball.dx;
     ball.y += ball.dy;
 
