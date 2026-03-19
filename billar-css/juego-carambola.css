@@ -1,5 +1,7 @@
-body {
+html, body {
     margin: 0;
+    padding: 0;
+    height: 100%;
     background: #111;
     overflow: hidden;
     font-family: Arial, sans-serif;
@@ -7,26 +9,31 @@ body {
     color: white;
 }
 
+/* 🔥 USAR dvh (altura real del móvil) */
 .game-container {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    overflow: hidden;
 }
 
 #gameCanvas {
-    width: 100%;
-    max-width: 100%;
     display: block;
+    max-width: 100%;
 }
 
+/* barra */
 .power-container {
     width: 90%;
+    max-width: 500px;
     height: 10px;
     background: #333;
-    margin: 10px 0;
+    margin: 8px 0;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -37,21 +44,9 @@ body {
     background: lime;
 }
 
+/* spin */
 #spinCanvas {
-    width: 100px;
-    height: 100px;
-    margin-top: 10px;
-}
-
-/* 📱 móvil */
-@media (max-width: 600px) {
-
-    #spinCanvas {
-        width: 90px;
-        height: 90px;
-    }
-
-    .power-container {
-        width: 95%;
-    }
+    width: 90px;
+    height: 90px;
+    margin-top: 5px;
 }
