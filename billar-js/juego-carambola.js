@@ -47,17 +47,18 @@ let balls = [whiteBall, yellowBall, redBall];
 // 📱 RESPONSIVE
 function resizeCanvas() {
 
-    const container = canvas.parentElement;
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
 
-    const maxWidth = container.clientWidth;
-    const maxHeight = container.clientHeight;
+    // 🔥 reservar espacio para UI
+    const uiHeight = 140; // título + barra + spin
 
-    let width = maxWidth;
+    let width = screenWidth;
     let height = width * 0.5;
 
-    // 🔥 AJUSTE REAL (usa altura del contenedor, no window)
-    if (height > maxHeight * 0.6) {
-        height = maxHeight * 0.6;
+    // 🔥 AJUSTE REAL (QUE TODO QUEPA)
+    if (height > screenHeight - uiHeight) {
+        height = screenHeight - uiHeight;
         width = height * 2;
     }
 
