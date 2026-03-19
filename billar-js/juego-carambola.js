@@ -341,8 +341,10 @@ function update() {
 // 🎯 SPIN
 function drawSpinSelector() {
 
-    spinCanvas.width = 150;
-    spinCanvas.height = 150;
+    spinCanvas.width = spinCanvas.clientWidth;
+    spinCanvas.height = spinCanvas.clientHeight;
+    //spinCanvas.width = 150;
+    //spinCanvas.height = 150;
 
     spinCtx.clearRect(0, 0, spinCanvas.width, spinCanvas.height);
 
