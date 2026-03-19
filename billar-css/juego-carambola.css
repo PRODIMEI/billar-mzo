@@ -1,12 +1,15 @@
 body {
     margin: 0;
     background: #111;
-    overflow: hidden; /* 🔥 clave */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
 }
 
 .game-container {
     width: 100%;
-    height: 100vh; /* 🔥 ocupa toda la pantalla */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,12 +17,13 @@ body {
 }
 
 #gameCanvas {
+    width: 100%;
     max-width: 100%;
-    height: auto;
+    display: block;
 }
 
-.power-container{
-  width: 90%;
+.power-container {
+    width: 90%;
     height: 10px;
     background: #333;
     margin: 10px 0;
@@ -27,10 +31,10 @@ body {
     overflow: hidden;
 }
 
-#powerBar{
-height:100%;
-width:0%;
-background:lime;
+#powerBar {
+    height: 100%;
+    width: 0%;
+    background: lime;
 }
 
 #spinCanvas {
@@ -39,16 +43,15 @@ background:lime;
     margin-top: 10px;
 }
 
-/* AJUSTE PARA CELULAR */
+/* 📱 móvil */
 @media (max-width: 600px) {
 
     #spinCanvas {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
 
     .power-container {
         width: 95%;
     }
-
 }
