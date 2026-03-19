@@ -29,12 +29,22 @@ let playLeft, playRight, playTop, playBottom;
 
 // 🔥 RESPONSIVE REAL
 function resizeCanvas() {
-    const width = canvas.parentElement.clientWidth;
+
+    const maxWidth = window.innerWidth;
+    const maxHeight = window.innerHeight;
+
+    // proporción billar 2:1 pero sin salirse de pantalla
+    let width = maxWidth;
+    let height = width * 0.5;
+
+    if (height > maxHeight * 0.6) {
+        height = maxHeight * 0.6;
+        width = height * 2;
+    }
 
     canvas.width = width;
-    canvas.height = width * 0.5; // proporción mesa
+    canvas.height = height;
 
-    // dinámico según tamaño
     rail = canvas.width * 0.05;
     ballRadius = canvas.width * 0.015;
 
@@ -43,7 +53,18 @@ function resizeCanvas() {
     playRight = canvas.width - rail;
     playBottom = canvas.height - rail;
 
-    resetBalls();
+    // 🔥 SOLO REPOSICIONA (NO RECREES)
+    whiteBall.x = canvas.width * 0.25;
+    whiteBall.y = canvas.height * 0.5;
+
+    yellowBall.x = canvas.width * 0.75;
+    yellowBall.y = canvas.height * 0.35;
+
+    redBall.x = canvas.width * 0.75;
+    redBall.y = canvas.height * 0.65;
+
+    // 🔥 ACTUALIZA RADIO SIN CREAR NUEVAS
+    balls.forEach(b => b.radius = ballRadius);
 }
 
 window.addEventListener("load", () => {
