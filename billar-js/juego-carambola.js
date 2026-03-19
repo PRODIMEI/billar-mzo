@@ -364,19 +364,21 @@ function drawSpinSelector() {
 
     spinCanvas.width = spinCanvas.clientWidth;
     spinCanvas.height = spinCanvas.clientHeight;
-    //spinCanvas.width = 150;
-    //spinCanvas.height = 150;
+
+    const cx = spinCanvas.width / 2;
+    const cy = spinCanvas.height / 2;
+    const r = spinCanvas.width * 0.4;
 
     spinCtx.clearRect(0, 0, spinCanvas.width, spinCanvas.height);
 
     spinCtx.beginPath();
-    spinCtx.arc(75, 75, 60, 0, Math.PI * 2);
+    spinCtx.arc(cx, cy, r, 0, Math.PI * 2);
     spinCtx.fillStyle = "white";
     spinCtx.fill();
     spinCtx.stroke();
 
     spinCtx.beginPath();
-    spinCtx.arc(75 + spinX, 75 + spinY, 8, 0, Math.PI * 2);
+    spinCtx.arc(cx + spinX, cy + spinY, r * 0.15, 0, Math.PI * 2);
     spinCtx.fillStyle = "red";
     spinCtx.fill();
 }
