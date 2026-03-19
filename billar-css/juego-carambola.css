@@ -1,29 +1,16 @@
-body{
-margin: 0;
-padding: 0;
-background: #111;
-overflow-x: hidden;
-  
-/*background:#0b0b0b;
-color:white;
-font-family:Arial;
-text-align:center;
-margin:0;*/
+body {
+    margin: 0;
+    background: #111;
+    overflow: hidden; /* 🔥 clave */
 }
 
-.game-container{
-width: 100%;
-max-width: 100vw;
-display: flex;
-flex-direction: column;
-align-items: center;
-  
-/*display:flex;
-justify-content:center;
-align-items:flex-start;
-gap:30px;
-flex-wrap:wrap;
-padding:20px;*/
+.game-container {
+    width: 100%;
+    height: 100vh; /* 🔥 ocupa toda la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #gameCanvas{
