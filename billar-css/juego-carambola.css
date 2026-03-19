@@ -1,52 +1,45 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
     background: #111;
-    overflow: hidden;
     font-family: Arial, sans-serif;
-    text-align: center;
     color: white;
+    overflow: hidden;
 }
 
-/* 🔥 USAR dvh (altura real del móvil) */
+/* 🔥 CONTENEDOR REAL */
 .game-container {
     width: 100%;
     height: 100dvh;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
-    overflow: hidden;
+    align-items: center;
 }
 
+/* 🔥 TÍTULO MÁS PEQUEÑO */
+h1 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* 🔥 CANVAS CONTROLADO */
 #gameCanvas {
-    display: block;
+    width: 100%;
     max-width: 100%;
 }
 
-/* barra */
+/* 🔥 BARRA */
 .power-container {
     width: 90%;
-    max-width: 500px;
-    height: 10px;
-    background: #333;
-    margin: 8px 0;
-    border-radius: 5px;
-    overflow: hidden;
+    height: 8px;
+    margin: 5px 0;
 }
 
-#powerBar {
-    height: 100%;
-    width: 0%;
-    background: lime;
-}
-
-/* spin */
+/* 🔥 SPIN MÁS CHICO */
 #spinCanvas {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     margin-top: 5px;
 }
