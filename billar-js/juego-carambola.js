@@ -96,15 +96,6 @@ let redBall = createBall(0, 0, "red");
 
 let balls = [whiteBall, yellowBall, redBall];
 
-// 🔥 RECREAR BOLAS EN RESIZE
-function resetBalls() {
-
-    whiteBall = createBall(canvas.width * 0.25, canvas.height * 0.5, "white");
-    yellowBall = createBall(canvas.width * 0.75, canvas.height * 0.35, "yellow");
-    redBall = createBall(canvas.width * 0.75, canvas.height * 0.65, "red");
-
-    balls = [whiteBall, yellowBall, redBall];
-}
 
 // 🎱 MESA
 function drawTable() {
