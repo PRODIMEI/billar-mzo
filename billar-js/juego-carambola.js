@@ -47,16 +47,25 @@ let balls = [whiteBall, yellowBall, redBall];
 // 📱 RESPONSIVE
 function resizeCanvas() {
 
-    let width = window.innerWidth;
+    const container = canvas.parentElement;
+
+    const maxWidth = container.clientWidth;
+    const maxHeight = container.clientHeight;
+
+    let width = maxWidth;
     let height = width * 0.5;
 
-    if (height > window.innerHeight * 0.6) {
-        height = window.innerHeight * 0.6;
+    // 🔥 AJUSTE REAL (usa altura del contenedor, no window)
+    if (height > maxHeight * 0.6) {
+        height = maxHeight * 0.6;
         width = height * 2;
     }
 
     canvas.width = width;
     canvas.height = height;
+
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
 
     rail = canvas.width * 0.05;
     ballRadius = canvas.width * 0.015;
