@@ -287,19 +287,26 @@ function shoot() {
 
 // 🎱 INPUT (PC + MÓVIL)
 function getPos(e) {
+
     const rect = canvas.getBoundingClientRect();
 
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+
+    let clientX, clientY;
+
     if (e.touches) {
-        return {
-            x: e.touches[0].clientX - rect.left,
-            y: e.touches[0].clientY - rect.top
-        };
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
     } else {
-        return {
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top
-        };
+        clientX = e.clientX;
+        clientY = e.clientY;
     }
+
+    return {
+        x: (clientX - rect.left) * scaleX,
+        y: (clientY - rect.top) * scaleY
+    };
 }
 
 canvas.addEventListener("mousedown", startAim);
