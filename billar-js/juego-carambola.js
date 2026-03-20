@@ -433,7 +433,7 @@ function shoot() {
     const angle = Math.atan2(dy, dx);
 
     //const power = Math.min(pullDistance * 0.12, 10);
-    const power = Math.min(pullDistance * 0.16, 12);
+    const power = Math.min(pullDistance * 0.18, 14);
 
     whiteBall.dx = Math.cos(angle) * power;
     whiteBall.dy = Math.sin(angle) * power;
