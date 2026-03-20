@@ -50,15 +50,31 @@ function resizeCanvas() {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
 
-    // 🔥 espacio real para UI (ajustado fino)
-    const uiHeight = 180;
+    const isLandscape = screenWidth > screenHeight;
 
-    let width = screenWidth;
-    let height = width * 0.5;
+    let width, height;
 
-    if (height > screenHeight - uiHeight) {
-        height = screenHeight - uiHeight;
+    if (isLandscape) {
+        // 🔥 MODO HORIZONTAL (más grande)
+        height = screenHeight * 0.75;
         width = height * 2;
+
+        if (width > screenWidth) {
+            width = screenWidth * 0.95;
+            height = width / 2;
+        }
+
+    } else {
+        // 🔥 MODO VERTICAL (más espacio UI)
+        const uiHeight = 180;
+
+        width = screenWidth;
+        height = width * 0.5;
+
+        if (height > screenHeight - uiHeight) {
+            height = screenHeight - uiHeight;
+            width = height * 2;
+        }
     }
 
     canvas.width = width;
