@@ -243,46 +243,134 @@ function drawGuideLine() {
 
     const angle = Math.atan2(dy, dx);
 
-    const maxLength = canvas.width * 2;
-
-    let x = whiteBall.x;
-    let y = whiteBall.y;
-
     let dirX = Math.cos(angle);
     let dirY = Math.sin(angle);
 
-    ctx.beginPath();
-    ctx.moveTo(x, y);
+    let startX = whiteBall.x;
+    let startY = whiteBall.y;
 
-    for (let i = 0; i < 3; i++) { // 🔥 número de rebotes
+    let hitBall = null;
+    let hitX = 0;
+    let hitY = 0;
 
-        let tX = dirX > 0 
-            ? (playRight - x) / dirX 
-            : (playLeft - x) / dirX;
+    let minDist = Infinity;
 
-        let tY = dirY > 0 
-            ? (playBottom - y) / dirY 
-            : (playTop - y) / dirY;
+    // 🔥 DETECTAR COLISIÓN CON OTRAS BOLAS
+    balls.forEach(ball => {
 
-        let t = Math.min(tX, tY);
+        if (ball === whiteBall) return;
 
-        x += dirX * t;
-        y += dirY * t;
+        const dx = ball.x - whiteBall.x;
+        const dy = ball.y - whiteBall.y;
 
-        ctx.lineTo(x, y);
+        const proj = dx * dirX + dy * dirY;
 
-        // 🔥 rebote
-        if (t === tX) dirX *= -1;
-        else dirY *= -1;
+        if (proj <= 0) return;
+
+        const closestX = whiteBall.x + dirX * proj;
+        const closestY = whiteBall.y + dirY * proj;
+
+        const dist = Math.hypot(ball.x - closestX, ball.y - closestY);
+
+        if (dist < ball.radius * 2) {
+
+            const collisionDist = proj - Math.sqrt((ball.radius * 2)**2 - dist**2);
+
+            if (collisionDist < minDist) {
+                minDist = collisionDist;
+                hitBall = ball;
+
+                hitX = whiteBall.x + dirX * collisionDist;
+                hitY = whiteBall.y + dirY * collisionDist;
+            }
+        }
+    });
+
+    ctx.setLineDash([8, 6]);
+    ctx.lineWidth = 2;
+
+    // 🎯 SI HAY COLISIÓN CON BOLA
+    if (hitBall) {
+
+        // línea principal
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.lineTo(hitX, hitY);
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+
+        // 🔥 PUNTO DE IMPACTO
+        ctx.beginPath();
+        ctx.arc(hitX, hitY, 5, 0, Math.PI * 2);
+        ctx.fillStyle = "red";
+        ctx.fill();
+
+        // 🔥 DIRECCIÓN DE LA BOLA GOLPEADA
+        const impactDx = hitBall.x - hitX;
+        const impactDy = hitBall.y - hitY;
+
+        const impactAngle = Math.atan2(impactDy, impactDx);
+
+        const targetDirX = Math.cos(impactAngle);
+        const targetDirY = Math.sin(impactAngle);
+
+        ctx.beginPath();
+        ctx.moveTo(hitBall.x, hitBall.y);
+        ctx.lineTo(
+            hitBall.x + targetDirX * 120,
+            hitBall.y + targetDirY * 120
+        );
+        ctx.strokeStyle = "yellow";
+        ctx.stroke();
+
+        // 🔥 DIRECCIÓN DE LA BLANCA DESPUÉS DEL GOLPE
+        const normalAngle = impactAngle + Math.PI / 2;
+
+        ctx.beginPath();
+        ctx.moveTo(hitX, hitY);
+        ctx.lineTo(
+            hitX + Math.cos(normalAngle) * 80,
+            hitY + Math.sin(normalAngle) * 80
+        );
+        ctx.strokeStyle = "cyan";
+        ctx.stroke();
+
+    } else {
+
+        // 🔥 SI NO HAY BOLA, DIBUJAR REBOTES
+        let x = startX;
+        let y = startY;
+
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+
+        for (let i = 0; i < 3; i++) {
+
+            let tX = dirX > 0 
+                ? (playRight - x) / dirX 
+                : (playLeft - x) / dirX;
+
+            let tY = dirY > 0 
+                ? (playBottom - y) / dirY 
+                : (playTop - y) / dirY;
+
+            let t = Math.min(tX, tY);
+
+            x += dirX * t;
+            y += dirY * t;
+
+            ctx.lineTo(x, y);
+
+            if (t === tX) dirX *= -1;
+            else dirY *= -1;
+        }
+
+        ctx.strokeStyle = "white";
+        ctx.stroke();
     }
 
-    ctx.strokeStyle = "rgba(255,255,255,0.6)";
-    ctx.lineWidth = 2;
-    ctx.setLineDash([8, 6]);
-    ctx.stroke();
     ctx.setLineDash([]);
 }
-
 // 🎱 COLISIONES (ULTRA ESTABLE)
 function resolveCollision(b1, b2) {
 
