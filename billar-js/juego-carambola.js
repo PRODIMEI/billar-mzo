@@ -234,6 +234,55 @@ function updateBall(ball) {
     if (Math.abs(ball.dy) < 0.02) ball.dy = 0;
 }
 
+function drawGuideLine() {
+
+    if (!aiming) return;
+
+    const dx = mouseX - whiteBall.x;
+    const dy = mouseY - whiteBall.y;
+
+    const angle = Math.atan2(dy, dx);
+
+    const maxLength = canvas.width * 2;
+
+    let x = whiteBall.x;
+    let y = whiteBall.y;
+
+    let dirX = Math.cos(angle);
+    let dirY = Math.sin(angle);
+
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+
+    for (let i = 0; i < 3; i++) { // 🔥 número de rebotes
+
+        let tX = dirX > 0 
+            ? (playRight - x) / dirX 
+            : (playLeft - x) / dirX;
+
+        let tY = dirY > 0 
+            ? (playBottom - y) / dirY 
+            : (playTop - y) / dirY;
+
+        let t = Math.min(tX, tY);
+
+        x += dirX * t;
+        y += dirY * t;
+
+        ctx.lineTo(x, y);
+
+        // 🔥 rebote
+        if (t === tX) dirX *= -1;
+        else dirY *= -1;
+    }
+
+    ctx.strokeStyle = "rgba(255,255,255,0.6)";
+    ctx.lineWidth = 2;
+    ctx.setLineDash([8, 6]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+}
+
 // 🎱 COLISIONES (ULTRA ESTABLE)
 function resolveCollision(b1, b2) {
 
@@ -285,6 +334,7 @@ function resolveCollision(b1, b2) {
 function moving() {
     return balls.some(b => Math.abs(b.dx) > 0.05 || Math.abs(b.dy) > 0.05);
 }
+
 
 // 🎱 DISPARO
 function shoot() {
@@ -377,7 +427,9 @@ function update() {
     }
 
     balls.forEach(drawBall);
-
+    
+    drawGuideLine(); // 👈 aquí
+    
     drawCue();
 
     requestAnimationFrame(update);
