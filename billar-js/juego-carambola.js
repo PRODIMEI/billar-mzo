@@ -50,13 +50,12 @@ function resizeCanvas() {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
 
-    // 🔥 reservar espacio para UI
-    const uiHeight = 140; // título + barra + spin
+    // 🔥 espacio real para UI (ajustado fino)
+    const uiHeight = 180;
 
     let width = screenWidth;
     let height = width * 0.5;
 
-    // 🔥 AJUSTE REAL (QUE TODO QUEPA)
     if (height > screenHeight - uiHeight) {
         height = screenHeight - uiHeight;
         width = height * 2;
