@@ -24,6 +24,10 @@ h1 {
     margin: 5px 0;
 }
 
+h3 {
+    margin: 2px;
+}
+
 /* 🔥 CANVAS CONTROLADO */
 #gameCanvas {
     width: 100%;
