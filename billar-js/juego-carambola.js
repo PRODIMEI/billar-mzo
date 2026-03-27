@@ -47,13 +47,14 @@ let balls = [whiteBall, yellowBall, redBall];
 // 📱 RESPONSIVE
 function resizeCanvas() {
 
+     const ratio = 1.95;
+    
     const panelWidth = 100; // 🔥 espacio del panel lateral
 
     const screenWidth = window.innerWidth - panelWidth;
     const screenHeight = window.innerHeight;
 
-    const ratio = 1.95;
-
+   
    let width = screenWidth;
    let height = width / ratio;
 
