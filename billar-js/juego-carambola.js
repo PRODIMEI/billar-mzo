@@ -47,34 +47,18 @@ let balls = [whiteBall, yellowBall, redBall];
 // 📱 RESPONSIVE
 function resizeCanvas() {
 
-    const screenWidth = window.innerWidth;
+    const panelWidth = 100; // 🔥 espacio del panel lateral
+
+    const screenWidth = window.innerWidth - panelWidth;
     const screenHeight = window.innerHeight;
 
-    const isLandscape = screenWidth > screenHeight;
+    let width = screenWidth;
+    let height = width * 0.5;
 
-    let width, height;
-
-    if (isLandscape) {
-        // 🔥 MODO HORIZONTAL (más grande)
-        height = screenHeight * 0.75;
+    // 🔥 usar casi toda la pantalla ahora
+    if (height > screenHeight * 0.9) {
+        height = screenHeight * 0.9;
         width = height * 2;
-
-        if (width > screenWidth) {
-            width = screenWidth * 0.95;
-            height = width / 2;
-        }
-
-    } else {
-        // 🔥 MODO VERTICAL (más espacio UI)
-        const uiHeight = 180;
-
-        width = screenWidth;
-        height = width * 0.5;
-
-        if (height > screenHeight - uiHeight) {
-            height = screenHeight - uiHeight;
-            width = height * 2;
-        }
     }
 
     canvas.width = width;
