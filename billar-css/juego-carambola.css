@@ -70,19 +70,36 @@ h3 {
     height: 80px;
 }
 
-@media (orientation: landscape) {
+/* 📱 MODO CELULAR (horizontal y pantallas pequeñas) */
+@media (max-width: 900px) {
 
-    h1, h3, .power-container {
-        display: none;
+    .game-container {
+        flex-direction: column; /* 🔥 cambia a vertical */
+        justify-content: flex-start;
+    }
+
+    #gameCanvas {
+        width: 95vw; /* 🔥 usa casi todo el ancho */
+        max-width: none;
+    }
+
+    .ui-panel {
+        flex-direction: row; /* 🔥 spin horizontal abajo */
+        justify-content: center;
     }
 
     #spinCanvas {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .power-container {
+        width: 120px;
+        height: 10px;
+    }
+
+    #powerBar {
+        height: 100%;
+        width: 0%;
     }
 }
-
-
