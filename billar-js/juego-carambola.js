@@ -52,14 +52,16 @@ function resizeCanvas() {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
 
-    // 🔥 usamos la ALTURA como base (clave)
-    let height = screenHeight * 0.75;
-    let width = height * ratio;
+    // 🔥 limitar ancho (CLAVE)
+    let maxWidth = screenWidth * 0.85;
 
-    // 🔥 si se pasa del ancho, ajustamos
-    if (width > screenWidth * 0.95) {
-        width = screenWidth * 0.95;
-        height = width / ratio;
+    let width = maxWidth;
+    let height = width / ratio;
+
+    // 🔥 si aún está muy alta, ajustar
+    if (height > screenHeight * 0.8) {
+        height = screenHeight * 0.8;
+        width = height * ratio;
     }
 
     canvas.width = width;
@@ -67,6 +69,10 @@ function resizeCanvas() {
 
     canvas.style.width = width + "px";
     canvas.style.height = height + "px";
+
+    // 🔥 CENTRAR
+    canvas.style.display = "block";
+    canvas.style.margin = "0 auto";
 
     rail = canvas.width * 0.05;
     ballRadius = canvas.width * 0.015;
