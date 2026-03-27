@@ -43,10 +43,12 @@ h3 {
 
 /* 🔥 panel lateral */
 .ui-panel {
-    width: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+
+    flex-shrink: 0; /* 🔥 NO empuja la mesa */
 }
 
 /* barra */
