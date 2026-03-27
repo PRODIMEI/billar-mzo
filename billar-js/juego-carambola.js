@@ -47,21 +47,19 @@ let balls = [whiteBall, yellowBall, redBall];
 // 📱 RESPONSIVE
 function resizeCanvas() {
 
-     const ratio = 1.95;
-    
-    const panelWidth = 100; // 🔥 espacio del panel lateral
+    const ratio = 1.95;
 
-    const screenWidth = window.innerWidth - panelWidth;
+    const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
 
-   
-   let width = screenWidth;
-   let height = width / ratio;
+    // 🔥 usamos la ALTURA como base (clave)
+    let height = screenHeight * 0.75;
+    let width = height * ratio;
 
-    // 🔥 usar casi toda la pantalla ahora
-    if (height > screenHeight * 0.9) {
-        height = screenHeight * 0.9;
-        width = height * ratio;
+    // 🔥 si se pasa del ancho, ajustamos
+    if (width > screenWidth * 0.95) {
+        width = screenWidth * 0.95;
+        height = width / ratio;
     }
 
     canvas.width = width;
