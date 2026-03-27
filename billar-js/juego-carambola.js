@@ -47,17 +47,20 @@ let balls = [whiteBall, yellowBall, redBall];
 // 📱 RESPONSIVE
 function resizeCanvas() {
 
-    const ratio = 1.7; // 🔥 clave (más compacta)
+    const ratio = 2; // ✅ proporción real de billar
 
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
 
-    let height = screenHeight * 0.75;
+    // 🔥 usamos la altura disponible (clave)
+    let availableHeight = screenHeight * 0.65;
+
+    let height = availableHeight;
     let width = height * ratio;
 
-    // evitar que se salga del ancho
-    if (width > screenWidth * 0.95) {
-        width = screenWidth * 0.95;
+    // 🔥 si se pasa del ancho, ajustamos
+    if (width > screenWidth * 0.9) {
+        width = screenWidth * 0.9;
         height = width / ratio;
     }
 
@@ -70,15 +73,15 @@ function resizeCanvas() {
     canvas.style.display = "block";
     canvas.style.margin = "0 auto";
 
-    rail = canvas.width * 0.05;
-    ballRadius = canvas.width * 0.018;
+    rail = canvas.width * 0.06;   // 🔥 borde un poco más grueso
+    ballRadius = canvas.width * 0.02; // 🔥 bolas más grandes (mejora visual)
 
     playLeft = rail;
     playTop = rail;
     playRight = canvas.width - rail;
     playBottom = canvas.height - rail;
 
-    // reposicionar bolas
+    // posiciones
     whiteBall.x = canvas.width * 0.25;
     whiteBall.y = canvas.height * 0.5;
 
