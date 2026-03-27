@@ -4,22 +4,22 @@ html, body {
     background: #111;
     font-family: Arial, sans-serif;
     color: white;
-    overflow: hidden;
+    overflow-x: hidden; /* 🔥 evita desbordes laterales */
+}
+    
 }
 
 /* 🔥 CONTENEDOR REAL */
 .game-container {
-    width: 100%;
-    height: 100dvh;
-
     display: flex;
-    flex-direction: row;
-
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 15px;
 
-    gap: 10px;
-
+    width: 100%;
+    min-height: 100dvh; /* 🔥 solución moderna */
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 /* 🔥 TÍTULO MÁS PEQUEÑO */
@@ -35,12 +35,10 @@ h3 {
 /* 🔥 CANVAS CONTROLADO */
 #gameCanvas {
     width: 100%;
-    max-width: 900px; /* 🔥 controla tamaño máximo */
-    
-    aspect-ratio: 2 / 1; /* 🔥 PROPORCIÓN PERFECTA */
-    
+    max-width: 900px;
+    aspect-ratio: 2 / 1;
+
     display: block;
-    margin: 0 auto;
 }
 
 /* 🔥 panel lateral */
