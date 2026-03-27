@@ -47,34 +47,14 @@ let balls = [whiteBall, yellowBall, redBall];
 // 📱 RESPONSIVE
 function resizeCanvas() {
 
-    const ratio = 2; // ✅ proporción real de billar
+    const rect = canvas.getBoundingClientRect();
 
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
+    // 🔥 ahora el canvas se adapta al tamaño visual REAL
+    canvas.width = rect.width;
+    canvas.height = rect.height;
 
-    // 🔥 usamos la altura disponible (clave)
-    let availableHeight = screenHeight * 0.65;
-
-    let height = availableHeight;
-    let width = height * ratio;
-
-    // 🔥 si se pasa del ancho, ajustamos
-    if (width > screenWidth * 0.9) {
-        width = screenWidth * 0.9;
-        height = width / ratio;
-    }
-
-    canvas.width = width;
-    canvas.height = height;
-
-    canvas.style.width = width + "px";
-    canvas.style.height = height + "px";
-
-    canvas.style.display = "block";
-    canvas.style.margin = "0 auto";
-
-    rail = canvas.width * 0.06;   // 🔥 borde un poco más grueso
-    ballRadius = canvas.width * 0.02; // 🔥 bolas más grandes (mejora visual)
+    rail = canvas.width * 0.05;
+    ballRadius = canvas.width * 0.02;
 
     playLeft = rail;
     playTop = rail;
@@ -93,7 +73,6 @@ function resizeCanvas() {
 
     balls.forEach(b => b.radius = ballRadius);
 }
-
 window.addEventListener("load", () => {
     resizeCanvas();
     update();
