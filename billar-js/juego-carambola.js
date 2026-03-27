@@ -52,13 +52,15 @@ function resizeCanvas() {
     const screenWidth = window.innerWidth - panelWidth;
     const screenHeight = window.innerHeight;
 
-    let width = screenWidth;
-    let height = width * 0.5;
+    const ratio = 1.95;
+
+   let width = screenWidth;
+   let height = width / ratio;
 
     // 🔥 usar casi toda la pantalla ahora
     if (height > screenHeight * 0.9) {
         height = screenHeight * 0.9;
-        width = height * 2;
+        width = height * ratio;
     }
 
     canvas.width = width;
