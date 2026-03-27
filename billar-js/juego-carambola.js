@@ -49,7 +49,6 @@ function resizeCanvas() {
 
     const rect = canvas.getBoundingClientRect();
 
-    // 🔥 ahora el canvas se adapta al tamaño visual REAL
     canvas.width = rect.width;
     canvas.height = rect.height;
 
@@ -73,6 +72,9 @@ function resizeCanvas() {
 
     balls.forEach(b => b.radius = ballRadius);
 }
+
+
+
 window.addEventListener("load", () => {
     resizeCanvas();
     update();
