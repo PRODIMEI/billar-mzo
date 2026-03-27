@@ -13,9 +13,13 @@ html, body {
     height: 100dvh;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
     align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
 }
 
 /* 🔥 TÍTULO MÁS PEQUEÑO */
@@ -30,22 +34,29 @@ h3 {
 
 /* 🔥 CANVAS CONTROLADO */
 #gameCanvas {
-    width: 100%;
+    flex: 1;
     max-width: 100%;
+}
+
+/* 🔥 panel lateral */
+.ui-panel {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* 🔥 BARRA */
 .power-container {
-    width: 90%;
-    height: 8px;
-    margin: 5px 0;
+    width: 80px;
+    height: 100px;
+    margin-top: 10px;
 }
 
 /* 🔥 SPIN MÁS CHICO */
 #spinCanvas {
     width: 80px;
     height: 80px;
-    margin-top: 5px;
 }
 
 @media (orientation: landscape) {
