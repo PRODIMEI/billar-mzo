@@ -34,8 +34,13 @@ h3 {
 
 /* 🔥 CANVAS CONTROLADO */
 #gameCanvas {
-    flex: 1;
-    max-width: 100%;
+    width: 100%;
+    max-width: 900px; /* 🔥 controla tamaño máximo */
+    
+    aspect-ratio: 2 / 1; /* 🔥 PROPORCIÓN PERFECTA */
+    
+    display: block;
+    margin: 0 auto;
 }
 
 /* 🔥 panel lateral */
