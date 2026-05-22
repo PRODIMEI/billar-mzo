@@ -8,12 +8,12 @@ const torneos = [
     lugar: "La Bola Billiards, Manzanillo, Colima",
 
     enlaces: {
-      calendario: "calendario.html",
-      partidos: "partidos.html",
-      tabla: "tabla.html",
-      bases: "Bases.html",
-      liguilla: "liguilla1.html",
-      galeria: "galeria-liga1.html"
+      calendario: "cant-calendario.html",
+      partidos: "cant-partidos.html",
+      tabla: "cant-tabla.html",
+      bases: "cant-Bases.html",
+      liguilla: "cant-liguilla1.html",
+      galeria: "cant-galeria-liga1.html"
     }
   }
 ];
