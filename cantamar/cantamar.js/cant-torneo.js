@@ -1,7 +1,7 @@
 // === TORNEOS ===
 const torneos = [
  {
-    nombre: "5ta-Liga, Torneo Entre Amigos ll 2026",
+    nombre: "5ta-Liga, Torneo Los Consagrados 2026",
     inicio: "21-05-2026",
     fin: "02-08-2026",
     competidores: 20,
