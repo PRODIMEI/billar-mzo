@@ -1,10 +1,10 @@
 // === TORNEOS ===
 const torneos = [
 //  {
-//    nombre: "Torneo de Liga, Entre Amigos. 2025-2026",
-//    inicio: "08-12-2025",
-//    fin: "07-03-2026",
-//    competidores: 22,
+//    nombre: "Torneo de Liga, Entre Amigos ll 2026",
+//    inicio: "06-05-2026",
+//    fin: "20-06-2026",
+//    competidores: 18,
 //    lugar: "La Bola Centro, Manzanillo, Colima",
     
 //    enlaces: {
