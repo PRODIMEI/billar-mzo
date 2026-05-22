@@ -1,11 +1,11 @@
 // === TORNEOS ===
 const torneos = [
  {
-    nombre: "4ta-Liga, Torneo Entre Amigos ll 2026",
-    inicio: "06-05-2026",
-    fin: "20-06-2026",
-    competidores: 18,
-    lugar: "La Bola Centro, Manzanillo, Colima",
+    nombre: "5ta-Liga, Torneo Entre Amigos ll 2026",
+    inicio: "21-05-2026",
+    fin: "02-08-2026",
+    competidores: 20,
+    lugar: "La Bola Billiards, Manzanillo, Colima",
 
     enlaces: {
       calendario: "calendario.html",
