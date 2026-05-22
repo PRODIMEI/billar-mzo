@@ -39,7 +39,7 @@ const torneos = [
 //];
 
  {
-    nombre: "4ta-Liga, Entre Amigos ll 2026",
+    nombre: "4ta-Liga, Torneo Entre Amigos ll 2026",
     inicio: "06-05-2026",
     fin: "20-06-2026",
     competidores: 18,
