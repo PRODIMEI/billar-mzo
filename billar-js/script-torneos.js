@@ -39,10 +39,10 @@ const torneos = [
 //];
 
  {
-   nombre: "3ra-Liga, Torneo Entre Amigos. 2026",
-    inicio: "02-03-2026",
-    fin: "25-04-2026",
-    competidores: 22,
+    nombre: "4ta-Liga, Entre Amigos ll 2026",
+    inicio: "06-05-2026",
+    fin: "20-06-2026",
+    competidores: 18,
     lugar: "La Bola Centro, Manzanillo, Colima",
 
     enlaces: {
