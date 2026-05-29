@@ -13,27 +13,29 @@
 // Lista de jugadores (3ra. Liga)
 const jugadores = [
    "Ginno","Ardilla","Panther","Campos","Adán","Pichón","Francisco","Julio","Alex","Reyes","Camilo",
-   "Zalazar","Cañas","Gurrola","Chapatín","Erick","Ruvancaba","Rolando","Cotorra","Mario"
+   "Zalazar","Cañas","Gurrola","Chapatín","Erick","Ruvalcaba","Rolando","Cotorra","Mario"
 ];
 
 // Jornadas (usted ya las definió hasta la 21)
 const jornadas = {
   /* pegar aquí su objeto jornadas tal cual (omitido para brevedad en este bloque),
      pero en su archivo real debe estar completo tal como ya lo tiene */
-   1: [["Mario","Ginno"],["Ardilla","Cotorra"],["Panther","Rolando"],["Campos","Ruvancaba"],["Adán","Erick"],["Pichón","Chapatín"],["Francisco","Gurrola"],["Julio","Cañas"],["Alex","Salazar"],["Reyes","Camilo"]],
-   2: [["Mario","Ardilla"],["Panther","Ginno"],["Campos","Cotorra"],["Adán","Rolando"],["Pichón","Ruvancaba"],["Francisco","Erick"],["Julio","Chapatín"],["Alex","Gurrola"],["Reyes","Cañas"],["Camilo","Salazar"]],
-   3: [["Mario","Panther"],["Campos","Ardilla"],["Adán","Ginno"],["Pichón","Cotorra"],["Francisco","Rolando"],["Julio","Ruvancaba"],["Alex","Erick"],["Reyes","Chapatín"],["Camilo","Gurrola"],["Salazar","Cañas"]],
-   4: [["Mario","Campos"],["Adán","Panther"],["Pichón","Ardilla"],["Francisco","Ginno"],["Julio","Cotorra"],["Alex","Rolando"],["Reyes","Ruvancaba"],["Camilo","Erick"],["Salazar","Chapatín"],["Cañas","Gurrola"]],
-   5: [["Mario","Adán"],["Pichón","Campos"],["Francisco","Panther"],["Julio","Ardilla"],["Alex","Ginno"],["Reyes","Cotorra"],["Camilo","Rolando"],["Salazar","Ruvancaba"],["Cañas","Erick"],["Gurrola","Chapatín"]],
-   6: [["Mario","Pichón"],["Francisco","Adán"],["Julio","Campos"],["Alex","Panther"],["Reyes","Ardilla"],["Camilo","Ginno"],["Salazar","Cotorra"],["Cañas","Rolando"],["Gurrola","Ruvancaba"],["Chapatín","Erick"]],
-   7: [["Mario","Francisco"],["Julio","Pichón"],["Alex","Adán"],["Reyes","Campos"],["Camilo","Panther"],["Salazar","Ardilla"],["Cañas","Ginno"],["Gurrola","Cotorra"],["Chapatín","Rolando"],["Erick","Ruvancaba"]],
-   8: [["Mario","Julio"],["Alex","Francisco"],["Reyes","Pichón"],["Camilo","Adán"],["Salazar","Campos"],["Cañas","Panther"],["Gurrola","Ardilla"],["Chapatín","Ginno"],["Erick","Cotorra"],["Ruvancaba","Rolando"]],
-   9: [["Mario","Alex"],["Reyes","Julio"],["Camilo","Francisco"],["Salazar","Pichón"],["Cañas","Adán"],["Gurrola","Campos"],["Chapatín","Panther"],["Erick","Ardilla"],["Ruvancaba","Ginno"],["Rolando","Cotorra"]],
-  10: [["Mario","Reyes"],["Camilo","Alex"],["Salazar","Julio"],["Cañas","Francisco"],["Gurrola","Pichón"],["Chapatín","Adán"],["Erick","Campos"],["Ruvancaba","Panther"],["Rolando","Ardilla"],["Cotorra","Ginno"]],
-  11: [["Mario","Camilo"],["Salazar","Reyes"],["Cañas","Alex"],["Gurrola","Julio"],["Chapatín","Francisco"],["Erick","Pichón"],["Ruvancaba","Adán"],["Rolando","Campos"],["Cotorra","Panther"],["Ginno","Ardilla"]],
-  11: [["Mario","Salazar"],["Cañas","Camilo"],["Gurrola","Reyes"],["Chapatín","Alex"],["Erick","Julio"],["Ruvancaba","Francisco"],["Rolando","Pichón"],["Cotorra","Adán"],["Ginno","Campos"],["Ardilla","Panther"]],
-   
-  21: [["Erick Bernal","Miguelito"],["Martín Barreto","Héctor Pineda (Cagochi)"],["Adrián Méndez (Alemán)","Fernando (Pollo)"],["Eduardo Rendon (Charro)","Israel Peña"],["Alejandro Torres (Alex)","Kechis"],["Santos Chavez","Francisco Negrete (Rioco)"],["Ramon","Coliman"],["Cristian Pineda (Kity)","Julio Torres"],["Rafael Figueroa Silva (Rafa)","Gustavo Lozoya"],["Cayetano (Caye)","Ginno López"],["Matias","Francisco Aguilar (MTTO.)"]]  
+   1: [["Mario","Ginno"],["Ardilla","Cotorra"],["Panther","Rolando"],["Campos","Ruvalcaba"],["Adán","Erick"],["Pichón","Chapatín"],["Francisco","Gurrola"],["Julio","Cañas"],["Alex","Salazar"],["Reyes","Camilo"]],
+   2: [["Mario","Ardilla"],["Panther","Ginno"],["Campos","Cotorra"],["Adán","Rolando"],["Pichón","Ruvalcaba"],["Francisco","Erick"],["Julio","Chapatín"],["Alex","Gurrola"],["Reyes","Cañas"],["Camilo","Salazar"]],
+   3: [["Mario","Panther"],["Campos","Ardilla"],["Adán","Ginno"],["Pichón","Cotorra"],["Francisco","Rolando"],["Julio","Ruvalcaba"],["Alex","Erick"],["Reyes","Chapatín"],["Camilo","Gurrola"],["Salazar","Cañas"]],
+   4: [["Mario","Campos"],["Adán","Panther"],["Pichón","Ardilla"],["Francisco","Ginno"],["Julio","Cotorra"],["Alex","Rolando"],["Reyes","Ruvalcaba"],["Camilo","Erick"],["Salazar","Chapatín"],["Cañas","Gurrola"]],
+   5: [["Mario","Adán"],["Pichón","Campos"],["Francisco","Panther"],["Julio","Ardilla"],["Alex","Ginno"],["Reyes","Cotorra"],["Camilo","Rolando"],["Salazar","Ruvalcaba"],["Cañas","Erick"],["Gurrola","Chapatín"]],
+   6: [["Mario","Pichón"],["Francisco","Adán"],["Julio","Campos"],["Alex","Panther"],["Reyes","Ardilla"],["Camilo","Ginno"],["Salazar","Cotorra"],["Cañas","Rolando"],["Gurrola","Ruvalcaba"],["Chapatín","Erick"]],
+   7: [["Mario","Francisco"],["Julio","Pichón"],["Alex","Adán"],["Reyes","Campos"],["Camilo","Panther"],["Salazar","Ardilla"],["Cañas","Ginno"],["Gurrola","Cotorra"],["Chapatín","Rolando"],["Erick","Ruvalcaba"]],
+   8: [["Mario","Julio"],["Alex","Francisco"],["Reyes","Pichón"],["Camilo","Adán"],["Salazar","Campos"],["Cañas","Panther"],["Gurrola","Ardilla"],["Chapatín","Ginno"],["Erick","Cotorra"],["Ruvalcaba","Rolando"]],
+   9: [["Mario","Alex"],["Reyes","Julio"],["Camilo","Francisco"],["Salazar","Pichón"],["Cañas","Adán"],["Gurrola","Campos"],["Chapatín","Panther"],["Erick","Ardilla"],["Ruvalcaba","Ginno"],["Rolando","Cotorra"]],
+  10: [["Mario","Reyes"],["Camilo","Alex"],["Salazar","Julio"],["Cañas","Francisco"],["Gurrola","Pichón"],["Chapatín","Adán"],["Erick","Campos"],["Ruvalcaba","Panther"],["Rolando","Ardilla"],["Cotorra","Ginno"]],
+  11: [["Mario","Camilo"],["Salazar","Reyes"],["Cañas","Alex"],["Gurrola","Julio"],["Chapatín","Francisco"],["Erick","Pichón"],["Ruvalcaba","Adán"],["Rolando","Campos"],["Cotorra","Panther"],["Ginno","Ardilla"]],
+  12: [["Mario","Salazar"],["Cañas","Camilo"],["Gurrola","Reyes"],["Chapatín","Alex"],["Erick","Julio"],["Ruvalcaba","Francisco"],["Rolando","Pichón"],["Cotorra","Adán"],["Ginno","Campos"],["Ardilla","Panther"]],
+  13: [["Mario","Cañas"],["Gurrola","Salazar"],["Chapatín","Camilo"],["Erick","Reyes"],["Ruvalcaba","Alex"],["Rolando","Julio"],["Cotorra","Francisco"],["Ginno","Pichón"],["Ardilla","Adán"],["Panther","Campos"]],   
+  14: [["Mario","Gurrola"],["Chapatín","Cañas"],["Erick","Salazar"],["Ruvalcaba","Camilo"],["Rolando","Reyes"],["Cotorra","Alex"],["Ginno","Julio"],["Ardilla","Francisco"],["Panther","Pichón"],["Campos","Adán"]],  
+  
+   21: [["Erick Bernal","Miguelito"],["Martín Barreto","Héctor Pineda (Cagochi)"],["Adrián Méndez (Alemán)","Fernando (Pollo)"],["Eduardo Rendon (Charro)","Israel Peña"],["Alejandro Torres (Alex)","Kechis"],["Santos Chavez","Francisco Negrete (Rioco)"],["Ramon","Coliman"],["Cristian Pineda (Kity)","Julio Torres"],["Rafael Figueroa Silva (Rafa)","Gustavo Lozoya"],["Cayetano (Caye)","Ginno López"],["Matias","Francisco Aguilar (MTTO.)"]]  
    
 };
 
