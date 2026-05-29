@@ -28,6 +28,8 @@ const jornadas = {
    6: [["Mario","Pichón"],["Francisco","Adán"],["Julio","Campos"],["Alex","Panther"],["Reyes","Ardilla"],["Camilo","Ginno"],["Salazar","Cotorra"],["Cañas","Rolando"],["Gurrola","Ruvancaba"],["Chapatín","Erick"]],
    7: [["Mario","Francisco"],["Julio","Pichón"],["Alex","Adán"],["Reyes","Campos"],["Camilo","Panther"],["Salazar","Ardilla"],["Cañas","Ginno"],["Gurrola","Cotorra"],["Chapatín","Rolando"],["Erick","Ruvancaba"]],
    8: [["Mario","Julio"],["Alex","Francisco"],["Reyes","Pichón"],["Camilo","Adán"],["Salazar","Campos"],["Cañas","Panther"],["Gurrola","Ardilla"],["Chapatín","Ginno"],["Erick","Cotorra"],["Ruvancaba","Rolando"]],
+   9: [["Mario","Alex"],["Reyes","Julio"],["Camilo","Francisco"],["Salazar","Pichón"],["Cañas","Adán"],["Gurrola","Campos"],["Chapatín","Panther"],["Erick","Ardilla"],["Ruvancaba","Ginno"],["Rolando","Cotorra"]],
+  10: [["Mario","Reyes"],["Camilo","Alex"],["Salazar","Julio"],["Cañas","Francisco"],["Gurrola","Pichón"],["Chapatín","Adán"],["Erick","Campos"],["Ruvancaba","Panther"],["Rolando","Ardilla"],["Cotorra","Ginno"]],
    
   21: [["Erick Bernal","Miguelito"],["Martín Barreto","Héctor Pineda (Cagochi)"],["Adrián Méndez (Alemán)","Fernando (Pollo)"],["Eduardo Rendon (Charro)","Israel Peña"],["Alejandro Torres (Alex)","Kechis"],["Santos Chavez","Francisco Negrete (Rioco)"],["Ramon","Coliman"],["Cristian Pineda (Kity)","Julio Torres"],["Rafael Figueroa Silva (Rafa)","Gustavo Lozoya"],["Cayetano (Caye)","Ginno López"],["Matias","Francisco Aguilar (MTTO.)"]]  
    
