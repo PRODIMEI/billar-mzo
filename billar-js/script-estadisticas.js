@@ -22,7 +22,7 @@ const jornadas = {
      pero en su archivo real debe estar completo tal como ya lo tiene */
    1: [["Mario","Ginno"],["Ardilla","Cotorra"],["Panther","Rolando"],["Campos","Ruvancaba"],["Adán","Erick"],["Pichón","Chapatín"],["Francisco","Gurrola"],["Julio","Cañas"],["Alex","Salazar"],["Reyes","Camilo"]],
    2: [["Mario","Ardilla"],["Panther","Ginno"],["Campos","Cotorra"],["Adán","Rolando"],["Pichón","Ruvancaba"],["Francisco","Erick"],["Julio","Chapatín"],["Alex","Gurrola"],["Reyes","Cañas"],["Camilo","Salazar"]],
-   3: [["Mario","Ardilla"],["Panther","Ginno"],["Campos","Cotorra"],["Adán","Rolando"],["Pichón","Ruvancaba"],["Francisco","Erick"],["Julio","Chapatín"],["Alex","Gurrola"],["Reyes","Cañas"],["Camilo","Salazar"]],
+   3: [["Mario","Panther"],["Campos","Ardilla"],["Adán","Ginno"],["Pichón","Cotorra"],["Francisco","Rolando"],["Julio","Ruvancaba"],["Alex","Erick"],["Reyes","Chapatín"],["Camilo","Gurrola"],["Salazar","Cañas"]],
    4: 
    5: 
    
