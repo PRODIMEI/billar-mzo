@@ -5,7 +5,59 @@
    - Genera PDF y JPG con el mismo estilo (sin columna Opciones)
    ============================================================ */
 
+/* ============================================================
+         AQUI EMPIEZA LA LIGA DE CANTAMAR 
+============================================================ */
+
 /* -------- DATOS BASE -------- */
+// Lista de jugadores (3ra. Liga)
+const jugadores = [
+   "Ginno","Ardilla","Panther","Campos","Adán","Pichón","Francisco","Julio","Alex","Reyes","Camilo",
+   "Zalazar","Cañas","Gurrola","Chapatín","Erick","Ruvancaba","Rolando","Cotorra","Mario"
+];
+
+// Jornadas (usted ya las definió hasta la 21)
+const jornadas = {
+  /* pegar aquí su objeto jornadas tal cual (omitido para brevedad en este bloque),
+     pero en su archivo real debe estar completo tal como ya lo tiene */
+   1: [["Mario","Ginno"],["Ardilla","Cotorra"],["Panther","Rolando"],["Campos","Ruvancaba"],["Adán","Erick"],["Pichón","Chapatín"],["Francisco","Gurrola"],["Julio","Cañas"],["Alex","Salazar"],["Reyes","Camilo"]],
+   2: [["Mario","Ginno"],["Ardilla","Cotorra"],["Panther","Rolando"],["Campos","Ruvancaba"],["Adán","Erick"],["Pichón","Chapatín"],["Francisco","Gurrola"],["Julio","Cañas"],["Alex","Salazar"],["Reyes","Camilo"]],
+   
+   3: [["Erick Bernal","Eduardo Rendon (Charro)"],["Alejandro Torres (Alex)","Adrián Méndez (Alemán)"],["Santos Chavez","Martín Barreto"],["Ramon","Miguelito"],["Cristian Pineda (Kity)","Héctor Pineda (Cagochi)"],["Rafael Figueroa Silva (Rafa)","Fernando (Pollo)"],["Cayetano (Caye)","Israel Peña"],["Matias","Kechis"],["Francisco Aguilar (MTTO.)","Francisco Negrete (Rioco)"],["Ginno López","Coliman"],["Gustavo Lozoya","Julio Torres"]],
+   4: [["Erick Bernal","Alejandro Torres (Alex)"],["Santos Chavez","Eduardo Rendon (Charro)"],["Ramon","Adrián Méndez (Alemán)"],["Cristian Pineda (Kity)","Martín Barreto"],["Rafael Figueroa Silva (Rafa)","Miguelito"],["Cayetano (Caye)","Héctor Pineda (Cagochi)"],["Matias","Fernando (Pollo)"],["Francisco Aguilar (MTTO.)","Israel Peña"],["Ginno López","Kechis"],["Gustavo Lozoya","Francisco Negrete (Rioco)"],["Julio Torres","Coliman"]],
+   5: [["Erick Bernal","Santos Chavez"],["Ramon","Alejandro Torres (Alex)"],["Cristian Pineda (Kity)","Eduardo Rendon (Charro)"],["Rafael Figueroa Silva (Rafa)","Adrián Méndez (Alemán)"],["Cayetano (Caye)","Martín Barreto"],["Matias","Miguelito"],["Francisco Aguilar (MTTO.)","Héctor Pineda (Cagochi)"],["Ginno López","Fernando (Pollo)"],["Gustavo Lozoya","Israel Peña"],["Julio Torres","Kechis"],["Coliman","Francisco Negrete (Rioco)"]],
+   6: [["Erick Bernal","Ramon"],["Cristian Pineda (Kity)","Santos Chavez"],["Rafael Figueroa Silva (Rafa)","Alejandro Torres (Alex)"],["Cayetano (Caye)","Eduardo Rendon (Charro)"],["Matias","Adrián Méndez (Alemán)"],["Francisco Aguilar (MTTO.)","Martín Barreto"],["Ginno López","Miguelito"],["Gustavo Lozoya","Héctor Pineda (Cagochi)"],["Julio Torres","Fernando (Pollo)"],["Coliman","Israel Peña"],["Francisco Negrete (Rioco)","Kechis"]],
+   7: [["Erick Bernal","Cristian Pineda (Kity)"],["Rafael Figueroa Silva (Rafa)","Ramon"],["Cayetano (Caye)","Santos Chavez"],["Matias","Alejandro Torres (Alex)"],["Francisco Aguilar (MTTO.)","Eduardo Rendon (Charro)"],["Ginno López","Adrián Méndez (Alemán)"],["Gustavo Lozoya","Martín Barreto"],["Julio Torres","Miguelito"],["Coliman","Héctor Pineda (Cagochi)"],["Francisco Negrete (Rioco)","Fernando (Pollo)"],["Kechis","Israel Peña"]],
+   8: [["Erick Bernal","Rafael Figueroa Silva (Rafa)"],["Cayetano (Caye)","Cristian Pineda (Kity)"],["Matias","Ramon"],["Francisco Aguilar (MTTO.)","Santos Chavez"],["Ginno López","Alejandro Torres (Alex)"],["Gustavo Lozoya","Eduardo Rendon (Charro)"],["Julio Torres","Adrián Méndez (Alemán)"],["Coliman","Martín Barreto"],["Francisco Negrete (Rioco)","Miguelito"],["Kechis","Héctor Pineda (Cagochi)"],["Israel Peña","Fernando (Pollo)"]],
+   9: [["Erick Bernal","Cayetano (Caye)"],["Matias","Rafael Figueroa Silva (Rafa)"],["Francisco Aguilar (MTTO.)","Cristian Pineda (Kity)"],["Ginno López","Ramon"],["Gustavo Lozoya","Santos Chavez"],["Julio Torres","Alejandro Torres (Alex)"],["Coliman","Eduardo Rendon (Charro)"],["Francisco Negrete (Rioco)","Adrián Méndez (Alemán)"],["Kechis","Martín Barreto"],["Israel Peña","Miguelito"],["Fernando (Pollo)","Héctor Pineda (Cagochi)"]],
+  10: [["Erick Bernal","Matias"],["Francisco Aguilar (MTTO.)","Cayetano (Caye)"],["Ginno López","Rafael Figueroa Silva (Rafa)"],["Gustavo Lozoya","Cristian Pineda (Kity)"],["Julio Torres","Ramon"],["Coliman","Santos Chavez"],["Francisco Negrete (Rioco)","Alejandro Torres (Alex)"],["Kechis","Eduardo Rendon (Charro)"],["Israel Peña","Adrián Méndez (Alemán)"],["Fernando (Pollo)","Martín Barreto"],["Héctor Pineda (Cagochi)","Miguelito"]],
+  11: [["Erick Bernal","Francisco Aguilar (MTTO.)"],["Ginno López","Matias"],["Gustavo Lozoya","Cayetano (Caye)"],["Julio Torres","Rafael Figueroa Silva (Rafa)"],["Coliman","Cristian Pineda (Kity)"],["Francisco Negrete (Rioco)","Ramon"],["Kechis","Santos Chavez"],["Israel Peña","Alejandro Torres (Alex)"],["Fernando (Pollo)","Eduardo Rendon (Charro)"],["Héctor Pineda (Cagochi)","Adrián Méndez (Alemán)"],["Miguelito","Martín Barreto"]],
+  12: [["Erick Bernal","Ginno López"],["Gustavo Lozoya","Francisco Aguilar (MTTO.)"],["Julio Torres","Matias"],["Coliman","Cayetano (Caye)"],["Francisco Negrete (Rioco)","Rafael Figueroa Silva (Rafa)"],["Kechis","Cristian Pineda (Kity)"],["Israel Peña","Ramon"],["Fernando (Pollo)","Santos Chavez"],["Héctor Pineda (Cagochi)","Alejandro Torres (Alex)"],["Miguelito","Eduardo Rendon (Charro)"],["Martín Barreto","Adrián Méndez (Alemán)"]],
+  13: [["Erick Bernal","Gustavo Lozoya"],["Julio Torres","Ginno López"],["Coliman","Francisco Aguilar (MTTO.)"],["Francisco Negrete (Rioco)","Matias"],["Kechis","Cayetano (Caye)"],["Israel Peña","Rafael Figueroa Silva (Rafa)"],["Fernando (Pollo)","Cristian Pineda (Kity)"],["Héctor Pineda (Cagochi)","Ramon"],["Miguelito","Santos Chavez"],["Martín Barreto","Alejandro Torres (Alex)"],["Adrián Méndez (Alemán)","Eduardo Rendon (Charro)"]],
+  14: [["Erick Bernal","Julio Torres"],["Coliman","Gustavo Lozoya"],["Francisco Negrete (Rioco)","Ginno López"],["Kechis","Francisco Aguilar (MTTO.)"],["Israel Peña","Matias"],["Fernando (Pollo)","Cayetano (Caye)"],["Héctor Pineda (Cagochi)","Rafael Figueroa Silva (Rafa)"],["Miguelito","Cristian Pineda (Kity)"],["Martín Barreto","Ramon"],["Adrián Méndez (Alemán)","Santos Chavez"],["Eduardo Rendon (Charro)","Alejandro Torres (Alex)"]],
+  15: [["Erick Bernal","Coliman"],["Francisco Negrete (Rioco)","Julio Torres"],["Kechis","Gustavo Lozoya"],["Israel Peña","Ginno López"],["Fernando (Pollo)","Francisco Aguilar (MTTO.)"],["Héctor Pineda (Cagochi)","Matias"],["Miguelito","Cayetano (Caye)"],["Martín Barreto","Rafael Figueroa Silva (Rafa)"],["Adrián Méndez (Alemán)","Cristian Pineda (Kity)"],["Eduardo Rendon (Charro)","Ramon"],["Alejandro Torres (Alex)","Santos Chavez"]],
+  16: [["Erick Bernal","Francisco Negrete (Rioco)"],["Kechis","Coliman"],["Israel Peña","Julio Torres"],["Fernando (Pollo)","Gustavo Lozoya"],["Héctor Pineda (Cagochi)","Ginno López"],["Miguelito","Francisco Aguilar (MTTO.)"],["Martín Barreto","Matias"],["Adrián Méndez (Alemán)","Cayetano (Caye)"],["Eduardo Rendon (Charro)","Rafael Figueroa Silva (Rafa)"],["Alejandro Torres (Alex)","Cristian Pineda (Kity)"],["Santos Chavez","Ramon"]],
+  17: [["Erick Bernal","Kechis"],["Israel Peña","Francisco Negrete (Rioco)"],["Fernando (Pollo)","Coliman"],["Héctor Pineda (Cagochi)","Julio Torres"],["Miguelito","Gustavo Lozoya"],["Martín Barreto","Ginno López"],["Adrián Méndez (Alemán)","Francisco Aguilar (MTTO.)"],["Eduardo Rendon (Charro)","Matias"],["Alejandro Torres (Alex)","Cayetano (Caye)"],["Santos Chavez","Rafael Figueroa Silva (Rafa)"],["Ramon","Cristian Pineda (Kity)"]],
+  18: [["Erick Bernal","Israel Peña"],["Fernando (Pollo)","Kechis"],["Héctor Pineda (Cagochi)","Francisco Negrete (Rioco)"],["Miguelito","Coliman"],["Martín Barreto","Julio Torres"],["Adrián Méndez (Alemán)","Gustavo Lozoya"],["Eduardo Rendon (Charro)","Ginno López"],["Alejandro Torres (Alex)","Francisco Aguilar (MTTO.)"],["Santos Chavez","Matias"],["Ramon","Cayetano (Caye)"],["Cristian Pineda (Kity)","Rafael Figueroa Silva (Rafa)"]],
+  19: [["Erick Bernal","Fernando (Pollo)"],["Héctor Pineda (Cagochi)","Israel Peña"],["Miguelito","Kechis"],["Martín Barreto","Francisco Negrete (Rioco)"],["Adrián Méndez (Alemán)","Coliman"],["Eduardo Rendon (Charro)","Julio Torres"],["Alejandro Torres (Alex)","Gustavo Lozoya"],["Santos Chavez","Ginno López"],["Ramon","Francisco Aguilar (MTTO.)"],["Cristian Pineda (Kity)","Matias"],["Rafael Figueroa Silva (Rafa)","Cayetano (Caye)"]],
+  20: [["Erick Bernal","Héctor Pineda (Cagochi)"],["Miguelito","Fernando (Pollo)"],["Martín Barreto","Israel Peña"],["Adrián Méndez (Alemán)","Kechis"],["Eduardo Rendon (Charro)","Francisco Negrete (Rioco)"],["Alejandro Torres (Alex)","Coliman"],["Santos Chavez","Julio Torres"],["Ramon","Gustavo Lozoya"],["Cristian Pineda (Kity)","Ginno López"],["Rafael Figueroa Silva (Rafa)","Francisco Aguilar (MTTO.)"],["Cayetano (Caye)","Matias"]],
+  21: [["Erick Bernal","Miguelito"],["Martín Barreto","Héctor Pineda (Cagochi)"],["Adrián Méndez (Alemán)","Fernando (Pollo)"],["Eduardo Rendon (Charro)","Israel Peña"],["Alejandro Torres (Alex)","Kechis"],["Santos Chavez","Francisco Negrete (Rioco)"],["Ramon","Coliman"],["Cristian Pineda (Kity)","Julio Torres"],["Rafael Figueroa Silva (Rafa)","Gustavo Lozoya"],["Cayetano (Caye)","Ginno López"],["Matias","Francisco Aguilar (MTTO.)"]]  
+   
+};
+
+/* ============================================================
+              AQUI TERMINA LA LIGA DE CANTAMAR 
+============================================================ */
+
+
+
+
+/* ============================================================
+         AQUI EMPIEZA LA LIGA DE MANZANILLO CENTRO 
+============================================================ */
+/* -------- DATOS BASE -------- */
+
+/*
 // Lista de jugadores (3ra. Liga)
 const jugadores = [
    "Ramon","Adrián Méndez (Alemán)","Erick Bernal","Cristian Pineda (Kity)","Miguelito","Eduardo Rendon (Charro)",
@@ -13,11 +65,10 @@ const jugadores = [
    "Matias","Martín Barreto","Héctor Pineda (Cagochi)","Israel Peña","Julio Torres","Gustavo Lozoya",
     "Kechis","Francisco Negrete (Rioco)","Coliman","Fernando (Pollo)","Alejandro Torres (Alex)"
 ];
-
+ 
 // Jornadas (usted ya las definió hasta la 21)
 const jornadas = {
-  /* pegar aquí su objeto jornadas tal cual (omitido para brevedad en este bloque),
-     pero en su archivo real debe estar completo tal como ya lo tiene */
+     
    1: [["Erick Bernal","Martín Barreto"],["Adrián Méndez (Alemán)","Miguelito"],["Eduardo Rendon (Charro)","Héctor Pineda (Cagochi)"],["Alejandro Torres (Alex)","Fernando (Pollo)"],["Santos Chavez","Israel Peña"],["Ramon","Kechis"],["Cristian Pineda (Kity)","Francisco Negrete (Rioco)"],["Rafael Figueroa Silva (Rafa)","Coliman"],["Cayetano (Caye)","Julio Torres"],["Matias","Gustavo Lozoya"],["Francisco Aguilar (MTTO.)","Ginno López"]],
    2: [["Erick Bernal","Adrián Méndez (Alemán)"],["Eduardo Rendon (Charro)","Martín Barreto"],["Alejandro Torres (Alex)","Miguelito"],["Santos Chavez","Héctor Pineda (Cagochi)"],["Ramon","Fernando (Pollo)"],["Cristian Pineda (Kity)","Israel Peña"],["Rafael Figueroa Silva (Rafa)","Kechis"],["Cayetano (Caye)","Francisco Negrete (Rioco)"],["Matias","Coliman"],["Francisco Aguilar (MTTO.)","Julio Torres"],["Ginno López","Gustavo Lozoya"]],
    3: [["Erick Bernal","Eduardo Rendon (Charro)"],["Alejandro Torres (Alex)","Adrián Méndez (Alemán)"],["Santos Chavez","Martín Barreto"],["Ramon","Miguelito"],["Cristian Pineda (Kity)","Héctor Pineda (Cagochi)"],["Rafael Figueroa Silva (Rafa)","Fernando (Pollo)"],["Cayetano (Caye)","Israel Peña"],["Matias","Kechis"],["Francisco Aguilar (MTTO.)","Francisco Negrete (Rioco)"],["Ginno López","Coliman"],["Gustavo Lozoya","Julio Torres"]],
@@ -41,6 +92,11 @@ const jornadas = {
   21: [["Erick Bernal","Miguelito"],["Martín Barreto","Héctor Pineda (Cagochi)"],["Adrián Méndez (Alemán)","Fernando (Pollo)"],["Eduardo Rendon (Charro)","Israel Peña"],["Alejandro Torres (Alex)","Kechis"],["Santos Chavez","Francisco Negrete (Rioco)"],["Ramon","Coliman"],["Cristian Pineda (Kity)","Julio Torres"],["Rafael Figueroa Silva (Rafa)","Gustavo Lozoya"],["Cayetano (Caye)","Ginno López"],["Matias","Francisco Aguilar (MTTO.)"]]  
    
 };
+*/
+/* ============================================================
+         AQUI TERMINA LA LIGA DE MANZANILLO CENTRO 
+============================================================ */
+
 
 /*******************************************************
  * Guarda la jornada seleccionada en localStorage
