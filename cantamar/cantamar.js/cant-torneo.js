@@ -10,7 +10,7 @@ const torneos = [
     enlaces: {
       calendario: "cant-calendario.html",
       partidos: "cant-partidos.html",
-      tabla: "tabla.html",
+      tabla: "../../billar-html/tabla.html"",
       bases: "cant-Bases.html",
       liguilla: "cant-liguilla1.html",
       galeria: "cant-galeria-liga1.html"
