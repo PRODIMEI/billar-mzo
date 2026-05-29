@@ -10,13 +10,13 @@
 ============================================================ */
 
 /* -------- DATOS BASE -------- */
-// Lista de jugadores (3ra. Liga)
+// Lista de jugadores (5ta. Liga)
 const jugadores = [
    "Ginno","Ardilla","Panther","Campos","Adán","Pichón","Francisco","Julio","Alex","Reyes","Camilo",
    "Zalazar","Cañas","Gurrola","Chapatín","Erick","Ruvalcaba","Rolando","Cotorra","Mario"
 ];
 
-// Jornadas (usted ya las definió hasta la 21)
+// Jornadas (usted ya las definió hasta la 19)
 const jornadas = {
   /* pegar aquí su objeto jornadas tal cual (omitido para brevedad en este bloque),
      pero en su archivo real debe estar completo tal como ya lo tiene */
@@ -130,7 +130,7 @@ jugadores.forEach(j => {
 function cargarJornadas() {
     const selJornada = document.getElementById("jornada");
     selJornada.innerHTML = "";
-    for (let i = 1; i <= 21; i++) {
+    for (let i = 1; i <= 19; i++) {
         const opt = document.createElement("option");
         opt.value = i;
         opt.textContent = `Jornada ${i}`;
