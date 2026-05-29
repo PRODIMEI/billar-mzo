@@ -13,7 +13,7 @@
 // Lista de jugadores (5ta. Liga)
 const jugadores = [
    "Ginno","Ardilla","Panther","Campos","Adán","Pichón","Francisco","Julio","Alex","Reyes","Camilo",
-   "Zalazar","Cañas","Gurrola","Chapatín","Erick","Ruvalcaba","Rolando","Cotorra","Mario"
+   "Salazar","Cañas","Gurrola","Chapatín","Erick","Ruvalcaba","Rolando","Cotorra","Mario"
 ];
 
 // Jornadas (usted ya las definió hasta la 19)
