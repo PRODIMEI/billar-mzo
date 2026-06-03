@@ -8,7 +8,7 @@ const torneos = [
     lugar: "La Bola Billiards, Manzanillo, Colima",
 
     enlaces: {
-      calendario: "cant-calendario.html",
+      calendario: "../cant-calendario.html",
       partidos: "cant-partidos.html",
       tabla: "cant-tabla.html"",
       bases: "cant-Bases.html",
